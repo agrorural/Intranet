@@ -1,0 +1,28 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: $font-family-sans-serif;
+    @include font-size();
+}
+
+a{
+    color: $link-color;
+    text-decoration: $link-hover-decoration;
+    &:hover{
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+}
+
+  form{
+    .form-group{
+      .form-control{
+        font-size: 100%;
+      }
+    }
+  }
+
+  .btn, .popover, .popover-header{
+      font-size: 100%;
+  }

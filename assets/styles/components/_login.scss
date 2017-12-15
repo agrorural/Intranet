@@ -1,0 +1,92 @@
+body#login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  flex-direction: column;
+  form{
+    .form-group{
+      position: relative;
+      height: 60px;
+      .form-control{
+        @include font-size(18, 18);
+        color: $gray-700;
+        padding: 27px 18px 9px;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border: 1px solid #e1e1e1;
+        outline: none;
+        margin: 0;
+        transition: background-color .2s ease;
+        height: 60px;
+        position: absolute;
+        font-family: inherit;
+        -webkit-appearance: none;
+        &:focus{
+          z-index: 11;
+          + label{
+            @include font-size(11, 11);
+            top: 8px;
+          }
+        }
+      }
+      label{
+            position: absolute;
+            display: block;
+            @include font-size(18, 18);
+            color: #b0b0b0;
+            top: 20px;
+            left: 18px;
+            right: 18px;
+            text-align: left;
+            pointer-events: none;
+            transition: all .2s ease;
+            z-index: 12;
+      }
+    }
+    .btn{
+        @include font-size(18); 
+        padding: 0.75rem 1rem;
+      }
+  }
+}
+.container{
+  max-width: 50%;
+  .preview-signin{
+    @extend .col;
+    background-color: white;
+  }
+  .form-signin {
+    @extend .col;
+    text-align: center;
+    background-color: $primary;
+  }
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

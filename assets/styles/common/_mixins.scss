@@ -1,0 +1,7 @@
+// Fuentes
+@mixin font-size($sizeValue: 16, $line-height: 23){
+  font-size: ($sizeValue) + px;
+  line-height: ($line-height) + px;
+  font-size: ($sizeValue * 0.1) + rem;
+  line-height: ($line-height * 0.1) + rem;
+}
