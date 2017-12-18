@@ -9920,6 +9920,7 @@ __webpack_require__(6);
 
 $(function () {
     $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip();
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 

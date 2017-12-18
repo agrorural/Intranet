@@ -1,28 +1,131 @@
-html{
+//
+// Fonts
+//
+@font-face {
+    font-family: 'vigaregular';
+    src: url('../fonts/Viga-Regular.woff2') format('woff2'), url('../fonts/Viga-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubuntumedium';
+    src: url('../fonts/Ubuntu-Medium.woff2') format('woff2'), url('../fonts/Ubuntu-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubuntubold';
+    src: url('../fonts/Ubuntu-Bold.woff2') format('woff2'), url('../fonts/Ubuntu-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'libre_franklinlight';
+    src: url('../fonts/Libre_Franklin-Light.woff2') format('woff2'), url('../fonts/Libre_Franklin-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Mozilla based browsers */
+
+::-moz-selection {
+    background-color: $lime-light;
+    color: $gray-800;
+}
+
+
+/* Works in Safari */
+
+::selection {
+    background-color: $lime-light;
+    color: $gray-800;
+}
+
+html {
     font-size: 62.5%;
 }
-body{
-    font-family: $font-family-sans-serif;
+
+body {
+    @include font-family('libre_franklin',
+    'light');
     @include font-size();
 }
 
-a{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include font-family('ubuntu',
+    'medium');
+}
+
+a {
     color: $link-color;
     text-decoration: $link-hover-decoration;
-    &:hover{
+    &:hover {
         color: $link-hover-color;
         text-decoration: $link-hover-decoration;
     }
 }
 
-  form{
-    .form-group{
-      .form-control{
-        font-size: 100%;
-      }
+//
+// Forms
+//
+form {
+    .form-group {
+        .form-control {
+            font-size: 100%;
+        }
     }
-  }
+}
 
-  .btn, .popover, .popover-header{
-      font-size: 100%;
-  }
+.btn,
+.popover,
+.popover-header,
+.tooltip {
+    font-size: 100%;
+}
+
+.btn {
+    text-transform: uppercase;
+}
+
+//
+// Brand
+//
+#brand {
+    @include img-replace(185,
+    125);
+    background-image: url(../images/agronet__logo--color--sm.png);
+    margin: 0 auto;
+    a {
+        position: relative;
+        display: block;
+        width: 185px;
+        height: 125px;
+    }
+}
+
+// JS
+// 
+// Popover
+.popover {
+    .popover-header {
+        @include font-size(16,
+        16);
+        color: $primary;
+        background-color: transparent;
+        border-bottom: 1px solid transparent;
+    }
+    .popover-body {
+        @include font-size(13,
+        18);
+        color: $gray-600;
+    }
+}

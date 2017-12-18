@@ -1,53 +1,32 @@
-
 //
 // Color system
 //
-
 // stylelint-disable
-$red:           #CC0500;
-$orange:        #E66807;
-$yellow:        #F1B604;
-$green-dark:    #055902;
-$green:         #36A502;
-$green-light:   #7eaf27;
-$lime:          #A2D52D;
-$lime-light:    #D9FF00;
-$teal:          #3ACCCC;
-$cyan:          #17a2b8;
-
+$red: #CC0500;
+$orange: #E66807;
+$yellow: #F1B604;
+$green-dark: #055902;
+$green: #36A502;
+$green-light: #7eaf27;
+$lime: #A2D52D;
+$lime-light: #D9FF00;
+$teal: #3ACCCC;
+$cyan: #17a2b8;
 $colors: ();
-$colors: map-merge((
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green-dark":      $green-dark,
-  "green":      $green,
-  "green-light":      $green-light,
-  "lime":       $lime,
-  "lime-light":       $lime-light,
-  "teal":       $teal,
-  "cyan":       $cyan
-), $colors);
-
-$primary:       $green;
-$secondary:     $yellow;
-$success:       $green-light;
-$info:          $teal;
-$warning:       $orange;
-$danger:        $red;
-
+$colors: map-merge(( "red": $red, "orange": $orange, "yellow": $yellow, "green-dark": $green-dark, "green": $green, "green-light": $green-light, "lime": $lime, "lime-light": $lime-light, "teal": $teal, "cyan": $cyan), $colors);
+$primary: $green;
+$secondary: $yellow;
+$success: $green-light;
+$info: $teal;
+$warning: $orange;
+$danger: $red;
 // Links
 //
 // Style anchor elements.
-
-$link-color:                $primary;
-$link-decoration:           none;
-$link-hover-color:          darken($link-color, 5%);
-$link-hover-decoration:     none;
-
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: lighten($link-color, 5%);
+$link-hover-decoration: none;
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
-$font-family-sans-serif:      Arial;
-$font-family-monospace:       "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            $font-family-sans-serif;

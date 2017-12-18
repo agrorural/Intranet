@@ -1,95 +1,129 @@
-    body#login {
-        @extend .d-flex;
-        background-color: #eee;
-        flex-direction: column;
+body#login {
+    @extend .d-flex;
+    background-color: #eee;
+    flex-direction: column;
+    @include media-breakpoint-up(sm) {
+        flex-direction: row;
+    }
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    min-height: 100vh;
+    .container {
+        width: 90%;
         @include media-breakpoint-up(sm) {
-            flex-direction: row;
+            width: 70%;
         }
-        @extend .align-items-center;
-        @extend .justify-content-center;
-        min-height: 100vh;
-        .container {
-            width: 90%;
-            @include media-breakpoint-up(sm) {
-                width: 70%;
-            }
-            .row {
-                .preview-signin {
-                    @extend .col;
-                    flex: 1 1 auto;
-                    @include media-breakpoint-up(sm) {
-                        flex: 1;
-                    }
-                    background-color: white;
+        @include media-breakpoint-up(lg) {
+            width: 50%;
+        }
+        .row {
+            .preview-signin {
+                @extend .col;
+                text-align: center;
+                flex: 1 1 auto;
+                @include media-breakpoint-up(sm) {
+                    flex: 1;
                 }
-                .form-signin {
-                    @extend .col;
-                    flex: 1 1 auto;
-                    @include media-breakpoint-up(sm) {
-                        flex: 1;
-                    }
-                    text-align: center;
-                    background-color: $primary;
-                    form {
-                        padding: 2.25rem;
-                        h2 {
+                background-color: white;
+                padding: 2.25rem;
+                nav {
+                    @extend .d-flex;
+                    @extend .flex-wrap;
+                    flex-direction: row;
+                    @extend .justify-content-center;
+                    //@extend .justify-content-between;
+                    margin-top: 3rem;
+                    a {
+                        line-height: 3rem;
+                        width: 3rem;
+                        height: 3rem;
+                        margin: 1rem;
+                        border: 1px solid $primary;
+                        border-radius: 3rem;
+                        &:hover {
                             color: $secondary;
+                            border: 1px solid $secondary;
                         }
-                        fieldset {
-                            padding-bottom: 2rem;
-                            padding-top: 2rem;
-                            .form-group {
-                                position: relative;
+                    }
+                }
+            }
+            .form-signin {
+                @extend .col;
+                flex: 1 1 auto;
+                @include media-breakpoint-up(sm) {
+                    flex: 1;
+                }
+                text-align: center;
+                background-color: $primary;
+                form {
+                    padding: 2.25rem;
+                    h2 {
+                        @include font-size(30);
+                        color: $secondary;
+                        margin-top: 3rem;
+                    }
+                    fieldset {
+                        padding-bottom: 2rem;
+                        padding-top: 6rem;
+                        .form-group {
+                            position: relative;
+                            height: 60px;
+                            margin-bottom: 2rem;
+                            .form-control {
+                                @include font-size(18, 18);
+                                padding: 27px 18px 9px;
+                                box-sizing: border-box;
+                                display: block;
+                                width: 100%;
+                                outline: none;
+                                margin: 0;
+                                transition: background-color .2s ease;
                                 height: 60px;
-                                margin-bottom: 2rem;
-                                .form-control {
-                                    @include font-size(16, 16);
-                                    color: white;
-                                    padding: 27px 18px 9px;
-                                    box-sizing: border-box;
-                                    display: block;
-                                    width: 100%;
-                                    outline: none;
-                                    margin: 0;
-                                    transition: background-color .2s ease;
-                                    height: 60px;
-                                    position: absolute;
-                                    -webkit-appearance: none;
-                                    &:focus {
-                                        border-bottom: 1px solid $secondary;
-                                        z-index: 11;
-                                        +label {
-                                            color: $secondary;
-                                            @include font-size(11, 11);
-                                            top: 8px;
-                                        }
+                                position: absolute;
+                                -webkit-appearance: none;
+                                &:focus {
+                                    border-bottom: 1px solid $secondary;
+                                    z-index: 11;
+                                    +label {
+                                        color: $secondary;
+                                        @include font-size(11, 11);
+                                        top: 8px;
                                     }
                                 }
-                                label {
-                                    position: absolute;
-                                    display: block;
-                                    @include font-size(16, 16);
-                                    color: $gray-500;
-                                    top: 20px;
-                                    left: 18px;
-                                    right: 0;
-                                    text-align: left;
-                                    pointer-events: none;
-                                    transition: all .2s ease;
-                                    z-index: 12;
-                                }
                             }
-                            .btn {
-                                @include font-size(18);
-                                padding: 0.75rem 1rem;
+                            label {
+                                position: absolute;
+                                display: block;
+                                @include font-size(18, 18);
+                                color: $gray-500;
+                                top: 20px;
+                                left: 18px;
+                                right: 0;
+                                text-align: left;
+                                pointer-events: none;
+                                transition: all .2s ease;
+                                z-index: 12;
                             }
                         }
-                        a {
-                            @include font-size(12);
-                            //color: $secondary;
+                        .btn {
+                            @include font-size(16);
+                            padding: 0.75rem 1rem;
                         }
+                    }
+                    a {
+                        @include font-size(13);
+                        color: $secondary;
                     }
                 }
             }
         }
     }
+}
+
+#brand {
+    margin: 6rem auto;
+    a {
+        width: 185px;
+        height: 125px;
+    }
+}
