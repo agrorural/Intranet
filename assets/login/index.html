@@ -38,16 +38,22 @@
                 </nav>
             </div>
             <div class="form-signin">
-                <form>
+                <form class="was-validated">
                     <h2>Accede</h2>
                     <fieldset>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="txtUser">
+                            <input type="text" class="form-control is-valid" id="txtUser" required>
                             <label for="txtUser">Usuario</label>
+                            <div class="invalid-feedback">
+                                Ingrese usuario.
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="txtPassword">
+                            <input type="password" class="form-control is-invalid" id="txtPassword" required>
                             <label for="txtPassword">Contraseña</label>
+                            <div class="invalid-feedback">
+                                Ingrese contraseña.
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-secondary btn-lg btn-block">Ingresar</button>
                     </fieldset>

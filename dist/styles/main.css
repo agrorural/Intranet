@@ -447,7 +447,7 @@ mark,
   .blockquote-footer::before {
     content: "\2014   \A0"; }
 
-.img-fluid {
+.img-fluid, nav.header ul li a.dropdown-toggle picture img {
   max-width: 100%;
   height: auto; }
 
@@ -557,7 +557,7 @@ pre {
     padding-left: 0; }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, body#login .container .row .preview-signin, body#login .container .row .form-signin,
-.col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
+.col-auto, .col-sm-1, .col-sm-2, #wrapper #content nav.header .navbar-header, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
 .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
 .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
@@ -710,7 +710,7 @@ pre {
   .col-sm-1 {
     flex: 0 0 8.33333%;
     max-width: 8.33333%; }
-  .col-sm-2 {
+  .col-sm-2, #wrapper #content nav.header .navbar-header {
     flex: 0 0 16.66667%;
     max-width: 16.66667%; }
   .col-sm-3 {
@@ -1303,12 +1303,12 @@ pre {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+  transition: all 0.3s; }
   .form-control::-ms-expand {
     background-color: transparent;
     border: 0; }
   .form-control:focus {
-    color: #495057;
+    color: #F1B604;
     background-color: #fff;
     border-color: #6dfc2a;
     outline: none;
@@ -1321,7 +1321,7 @@ pre {
     opacity: 1; }
 
 select.form-control:not([size]):not([multiple]) {
-  height: calc(2.25rem + 2px); }
+  height: 3rem; }
 
 select.form-control:focus::-ms-value {
   color: #495057;
@@ -2404,7 +2404,7 @@ tbody.collapse.show {
 .custom-select {
   display: inline-block;
   max-width: 100%;
-  height: calc(2.25rem + 2px);
+  height: 3rem;
   padding: 0.375rem 1.75rem 0.375rem 0.75rem;
   line-height: 1.5;
   color: #495057;
@@ -2439,13 +2439,13 @@ tbody.collapse.show {
   position: relative;
   display: inline-block;
   max-width: 100%;
-  height: calc(2.25rem + 2px);
+  height: 3rem;
   margin-bottom: 0; }
 
 .custom-file-input {
   min-width: 14rem;
   max-width: 100%;
-  height: calc(2.25rem + 2px);
+  height: 3rem;
   margin: 0;
   opacity: 0; }
   .custom-file-input:focus ~ .custom-file-control {
@@ -2457,7 +2457,7 @@ tbody.collapse.show {
   right: 0;
   left: 0;
   z-index: 5;
-  height: calc(2.25rem + 2px);
+  height: 3rem;
   padding: 0.375rem 0.75rem;
   line-height: 1.5;
   color: #495057;
@@ -2475,7 +2475,7 @@ tbody.collapse.show {
     bottom: -1px;
     z-index: 6;
     display: block;
-    height: calc(2.25rem + 2px);
+    height: 3rem;
     padding: 0.375rem 0.75rem;
     line-height: 1.5;
     color: #495057;
@@ -4151,7 +4151,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 .d-table-cell {
   display: table-cell !important; }
 
-.d-flex, body#login, body#login .container .row .preview-signin nav {
+.d-flex, #wrapper, #wrapper #content, #wrapper #content nav.header, #wrapper #content nav.header .navbar-header, #wrapper footer, body#login, body#login .container .row .preview-signin nav {
   display: flex !important; }
 
 .d-inline-flex {
@@ -4293,10 +4293,10 @@ a.bg-dark:focus, a.bg-dark:hover {
 .embed-responsive-1by1::before {
   padding-top: 100%; }
 
-.flex-row {
+.flex-row, #wrapper, #wrapper #content nav.header, #wrapper #content nav.header .navbar-header {
   flex-direction: row !important; }
 
-.flex-column {
+.flex-column, #wrapper #content {
   flex-direction: column !important; }
 
 .flex-row-reverse {
@@ -4305,7 +4305,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 .flex-column-reverse {
   flex-direction: column-reverse !important; }
 
-.flex-wrap, body#login .container .row .preview-signin nav {
+.flex-wrap, #wrapper #content, #wrapper #content nav.header, #wrapper #content nav.header .navbar-header, body#login .container .row .preview-signin nav {
   flex-wrap: wrap !important; }
 
 .flex-nowrap {
@@ -4335,7 +4335,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 .align-items-end {
   align-items: flex-end !important; }
 
-.align-items-center, body#login {
+.align-items-center, #wrapper #content nav.header, #wrapper #content nav.header .navbar-header, body#login {
   align-items: center !important; }
 
 .align-items-baseline {
@@ -4381,7 +4381,7 @@ a.bg-dark:focus, a.bg-dark:hover {
   align-self: stretch !important; }
 
 @media (min-width: 576px) {
-  .flex-sm-row {
+  .flex-sm-row, #wrapper footer {
     flex-direction: row !important; }
   .flex-sm-column {
     flex-direction: column !important; }
@@ -4389,7 +4389,7 @@ a.bg-dark:focus, a.bg-dark:hover {
     flex-direction: row-reverse !important; }
   .flex-sm-column-reverse {
     flex-direction: column-reverse !important; }
-  .flex-sm-wrap {
+  .flex-sm-wrap, #wrapper footer {
     flex-wrap: wrap !important; }
   .flex-sm-nowrap {
     flex-wrap: nowrap !important; }
@@ -4409,7 +4409,7 @@ a.bg-dark:focus, a.bg-dark:hover {
     align-items: flex-start !important; }
   .align-items-sm-end {
     align-items: flex-end !important; }
-  .align-items-sm-center {
+  .align-items-sm-center, #wrapper footer {
     align-items: center !important; }
   .align-items-sm-baseline {
     align-items: baseline !important; }
@@ -5876,6 +5876,12 @@ a.text-dark:focus, a.text-dark:hover {
   font-style: normal; }
 
 @font-face {
+  font-family: 'ubunturegular';
+  src: url(../fonts/Ubuntu-Regular.woff2) format("woff2"), url(../fonts/Ubuntu-Regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
   font-family: 'ubuntumedium';
   src: url(../fonts/Ubuntu-Medium.woff2) format("woff2"), url(../fonts/Ubuntu-Medium.woff) format("woff");
   font-weight: normal;
@@ -5898,6 +5904,10 @@ a.text-dark:focus, a.text-dark:hover {
   background-color: #D9FF00;
   color: #343a40; }
 
+* {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease; }
+
 /* Works in Safari */
 ::selection {
   background-color: #D9FF00;
@@ -5911,10 +5921,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
-  font-size: 16px;
-  line-height: 23px;
-  font-size: 1.6rem;
-  line-height: 2.3rem; }
+  font-size: 16px !important;
+  line-height: 23px !important;
+  font-size: 1.6rem !important;
+  line-height: 2.3rem !important; }
 
 h1,
 h2,
@@ -5922,7 +5932,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "ubuntumedium", sans-serif;
+  font-family: "ubunturegular", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased; }
@@ -5930,12 +5940,168 @@ h6 {
 a {
   color: #36A502;
   text-decoration: none; }
-  a:hover {
+  a:hover, a:focus {
     color: #3ebe02;
-    text-decoration: none; }
+    text-decoration: none;
+    transition: all 0.1s; }
 
-form .form-group .form-control {
-  font-size: 100%; }
+input:not([type]):disabled, input:not([type])[readonly="readonly"],
+input[type=text]:not(.browser-default):disabled,
+input[type=text]:not(.browser-default)[readonly="readonly"],
+input[type=password]:not(.browser-default):disabled,
+input[type=password]:not(.browser-default)[readonly="readonly"],
+input[type=email]:not(.browser-default):disabled,
+input[type=email]:not(.browser-default)[readonly="readonly"],
+input[type=url]:not(.browser-default):disabled,
+input[type=url]:not(.browser-default)[readonly="readonly"],
+input[type=time]:not(.browser-default):disabled,
+input[type=time]:not(.browser-default)[readonly="readonly"],
+input[type=date]:not(.browser-default):disabled,
+input[type=date]:not(.browser-default)[readonly="readonly"],
+input[type=datetime]:not(.browser-default):disabled,
+input[type=datetime]:not(.browser-default)[readonly="readonly"],
+input[type=datetime-local]:not(.browser-default):disabled,
+input[type=datetime-local]:not(.browser-default)[readonly="readonly"],
+input[type=tel]:not(.browser-default):disabled,
+input[type=tel]:not(.browser-default)[readonly="readonly"],
+input[type=number]:not(.browser-default):disabled,
+input[type=number]:not(.browser-default)[readonly="readonly"],
+input[type=search]:not(.browser-default):disabled,
+input[type=search]:not(.browser-default)[readonly="readonly"],
+textarea:disabled,
+textarea[readonly="readonly"] {
+  color: rgba(128, 128, 128, 0.42);
+  border-bottom: 1px dotted rgba(128, 128, 128, 0.42); }
+
+input:not([type]):disabled + label,
+input:not([type])[readonly="readonly"] + label,
+input[type=text]:not(.browser-default):disabled + label,
+input[type=text]:not(.browser-default)[readonly="readonly"] + label,
+input[type=password]:not(.browser-default):disabled + label,
+input[type=password]:not(.browser-default)[readonly="readonly"] + label,
+input[type=email]:not(.browser-default):disabled + label,
+input[type=email]:not(.browser-default)[readonly="readonly"] + label,
+input[type=url]:not(.browser-default):disabled + label,
+input[type=url]:not(.browser-default)[readonly="readonly"] + label,
+input[type=time]:not(.browser-default):disabled + label,
+input[type=time]:not(.browser-default)[readonly="readonly"] + label,
+input[type=date]:not(.browser-default):disabled + label,
+input[type=date]:not(.browser-default)[readonly="readonly"] + label,
+input[type=datetime]:not(.browser-default):disabled + label,
+input[type=datetime]:not(.browser-default)[readonly="readonly"] + label,
+input[type=datetime-local]:not(.browser-default):disabled + label,
+input[type=datetime-local]:not(.browser-default)[readonly="readonly"] + label,
+input[type=tel]:not(.browser-default):disabled + label,
+input[type=tel]:not(.browser-default)[readonly="readonly"] + label,
+input[type=number]:not(.browser-default):disabled + label,
+input[type=number]:not(.browser-default)[readonly="readonly"] + label,
+input[type=search]:not(.browser-default):disabled + label,
+input[type=search]:not(.browser-default)[readonly="readonly"] + label,
+textarea:disabled + label,
+textarea[readonly="readonly"] + label {
+  color: rgba(128, 128, 128, 0.42); }
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #36A502;
+  box-shadow: 0 1px 0 0 #36A502; }
+
+input:not([type]):focus:not([readonly]) + label,
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label,
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=url]:not(.browser-default):focus:not([readonly]) + label,
+input[type=time]:not(.browser-default):focus:not([readonly]) + label,
+input[type=date]:not(.browser-default):focus:not([readonly]) + label,
+input[type=datetime]:not(.browser-default):focus:not([readonly]) + label,
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label,
+input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
+input[type=number]:not(.browser-default):focus:not([readonly]) + label,
+input[type=search]:not(.browser-default):focus:not([readonly]) + label,
+textarea:focus:not([readonly]) + label {
+  color: #36A502; }
+
+form .form-group {
+  position: relative;
+  margin-bottom: 2rem;
+  font-size: 13px !important;
+  line-height: 23px !important;
+  font-size: 1.3rem !important;
+  line-height: 2.3rem !important; }
+  form .form-group label {
+    z-index: 12;
+    color: #495057;
+    font-size: 11px !important;
+    line-height: 16px !important;
+    font-size: 1.1rem !important;
+    line-height: 1.6rem !important; }
+  form .form-group .form-control {
+    font-size: 13px !important;
+    line-height: 13px !important;
+    font-size: 1.3rem !important;
+    line-height: 1.3rem !important; }
+  form .form-group.form-check label {
+    padding-left: 1.5rem; }
+    form .form-group.form-check label input {
+      margin-left: -1.5rem; }
+  form .form-group.input-field {
+    height: 46px; }
+    form .form-group.input-field input,
+    form .form-group.input-field textarea {
+      font-size: 14px !important;
+      line-height: 14px !important;
+      font-size: 1.4rem !important;
+      line-height: 1.4rem !important;
+      color: #495057;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #ced4da;
+      border-radius: 0;
+      outline: none;
+      height: 3rem;
+      margin: 0 0 8px 0;
+      padding: 0;
+      box-shadow: none;
+      padding: 20px 0 10px;
+      height: 46px; }
+      form .form-group.input-field input:focus,
+      form .form-group.input-field textarea:focus {
+        border-bottom: 1px solid #36A502;
+        z-index: 11; }
+        form .form-group.input-field input:focus ~ label,
+        form .form-group.input-field textarea:focus ~ label {
+          color: #36A502;
+          font-size: 11px !important;
+          line-height: 11px !important;
+          font-size: 1.1rem !important;
+          line-height: 1.1rem !important;
+          top: 3px; }
+    form .form-group.input-field textarea {
+      background-color: transparent; }
+    form .form-group.input-field label {
+      position: absolute;
+      font-size: 14px !important;
+      line-height: 14px !important;
+      font-size: 1.4rem !important;
+      line-height: 1.4rem !important;
+      top: 20px; }
+    form .form-group.input-field.not-empty label, form .form-group.input-field.placeholder label {
+      top: 3px;
+      font-size: 11px !important;
+      line-height: 11px !important;
+      font-size: 1.1rem !important;
+      line-height: 1.1rem !important; }
 
 .btn,
 .popover,
@@ -5944,6 +6110,10 @@ form .form-group .form-control {
   font-size: 100%; }
 
 .btn {
+  font-family: "ubuntumedium", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
   text-transform: uppercase; }
 
 #brand {
@@ -5968,20 +6138,269 @@ form .form-group .form-control {
     height: 125px; }
 
 .popover .popover-header {
-  font-size: 16px;
-  line-height: 16px;
-  font-size: 1.6rem;
-  line-height: 1.6rem;
+  font-size: 16px !important;
+  line-height: 16px !important;
+  font-size: 1.6rem !important;
+  line-height: 1.6rem !important;
   color: #36A502;
   background-color: transparent;
   border-bottom: 1px solid transparent; }
 
 .popover .popover-body {
-  font-size: 13px;
-  line-height: 18px;
-  font-size: 1.3rem;
-  line-height: 1.8rem;
+  font-size: 13px !important;
+  line-height: 18px !important;
+  font-size: 1.3rem !important;
+  line-height: 1.8rem !important;
   color: #868e96; }
+
+#wrapper {
+  min-height: 100vh;
+  max-width: 100%;
+  margin: auto;
+  background-color: #f8f9fa; }
+  #wrapper nav#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    color: #fff;
+    background-color: #3ebe02;
+    transition: all 0.3s; }
+    @media (max-width: 767px) {
+      #wrapper nav#sidebar {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+        margin-left: -80px !important; } }
+    #wrapper nav#sidebar .sidebar-header {
+      background-color: #39af02;
+      max-height: 70px;
+      padding: 15px; }
+      #wrapper nav#sidebar .sidebar-header h1#brand {
+        display: block;
+        width: 135px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-image: url(../images/agronet__logo--white--sm--horizontal.png);
+        margin: 0;
+        width: 135px;
+        height: 40px; }
+        #wrapper nav#sidebar .sidebar-header h1#brand span {
+          position: relative;
+          display: block;
+          text-indent: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          margin: 0;
+          padding: 0; }
+        #wrapper nav#sidebar .sidebar-header h1#brand a {
+          width: 135px;
+          height: 40px; }
+        @media (max-width: 767px) {
+          #wrapper nav#sidebar .sidebar-header h1#brand {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-repeat: no-repeat;
+            background-image: url(../images/agronet__logo--white--xs.png);
+            margin: 0;
+            width: 50px;
+            height: 50px; }
+            #wrapper nav#sidebar .sidebar-header h1#brand span {
+              position: relative;
+              display: block;
+              text-indent: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              margin: 0;
+              padding: 0; }
+            #wrapper nav#sidebar .sidebar-header h1#brand a {
+              width: 50px;
+              height: 50px; } }
+    #wrapper nav#sidebar a {
+      color: #fff; }
+      @media (max-width: 767px) {
+        #wrapper nav#sidebar a span {
+          display: none; } }
+    #wrapper nav#sidebar ul li a {
+      padding: 10px;
+      display: block; }
+      #wrapper nav#sidebar ul li a i {
+        margin-right: 5px;
+        font-size: 16px !important;
+        line-height: 23px !important;
+        font-size: 1.6rem !important;
+        line-height: 2.3rem !important; }
+      #wrapper nav#sidebar ul li a:hover {
+        background-color: #fff;
+        color: #36A502; }
+      #wrapper nav#sidebar ul li a.active {
+        background-color: #319602;
+        color: #fff; }
+    #wrapper nav#sidebar.active {
+      min-width: 80px;
+      max-width: 80px;
+      text-align: center;
+      margin-left: 0 !important; }
+      #wrapper nav#sidebar.active .sidebar-header h1#brand {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-image: url(../images/agronet__logo--white--xs.png);
+        margin: 0;
+        width: 50px;
+        height: 50px; }
+        #wrapper nav#sidebar.active .sidebar-header h1#brand span {
+          position: relative;
+          display: block;
+          text-indent: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          margin: 0;
+          padding: 0; }
+        #wrapper nav#sidebar.active .sidebar-header h1#brand a {
+          width: 50px;
+          height: 50px; }
+      #wrapper nav#sidebar.active ul li a i {
+        margin-right: 0;
+        display: block;
+        margin-bottom: 5px; }
+      #wrapper nav#sidebar.active ul li a span {
+        font-size: 13px !important;
+        line-height: 13px !important;
+        font-size: 1.3rem !important;
+        line-height: 1.3rem !important; }
+  #wrapper #content {
+    flex: 1 1 100%; }
+    #wrapper #content nav.header {
+      height: 70px;
+      background-color: #dee2e6; }
+      #wrapper #content nav.header .navbar-header {
+        height: 70px; }
+      #wrapper #content nav.header form {
+        color: #868e96; }
+        #wrapper #content nav.header form fieldset {
+          height: 32px;
+          line-height: 32px;
+          float: left;
+          background-color: rgba(255, 255, 255, 0.25); }
+          #wrapper #content nav.header form fieldset input {
+            background: transparent;
+            border: 0;
+            outline: none;
+            width: auto;
+            border-bottom: 0px solid transparent;
+            box-shadow: none; }
+          #wrapper #content nav.header form fieldset.fieldset-light {
+            background-color: rgba(255, 255, 255, 0.75); }
+            #wrapper #content nav.header form fieldset.fieldset-light i {
+              font-size: 16px !important;
+              line-height: 23px !important;
+              font-size: 1.6rem !important;
+              line-height: 2.3rem !important;
+              line-height: 32px;
+              text-align: center;
+              width: 48px; }
+            @media (max-width: 767px) {
+              #wrapper #content nav.header form fieldset.fieldset-light input {
+                width: 75px; } }
+      #wrapper #content nav.header.searching {
+        background-color: #ced4da; }
+        #wrapper #content nav.header.searching form {
+          padding-left: 0;
+          padding-right: 0;
+          width: auto; }
+          #wrapper #content nav.header.searching form fieldset.fieldset-light {
+            width: auto; }
+            #wrapper #content nav.header.searching form fieldset.fieldset-light input {
+              color: #343a40; }
+              @media (max-width: 575px) {
+                #wrapper #content nav.header.searching form fieldset.fieldset-light input {
+                  width: 125px; } }
+              @media (min-width: 576px) {
+                #wrapper #content nav.header.searching form fieldset.fieldset-light input {
+                  width: 300px; } }
+    #wrapper #content main {
+      flex: 1;
+      background-color: #fff;
+      padding: 0; }
+  #wrapper footer {
+    height: 70px;
+    background-color: #868e96;
+    height: 100px; }
+
+nav.header {
+  padding-left: 4rem;
+  padding-right: 4rem; }
+  @media (max-width: 575px) {
+    nav.header {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+  nav.header ul li {
+    position: relative; }
+    nav.header ul li a.dropdown-toggle picture {
+      display: inline-block;
+      width: 22px;
+      line-height: 22px;
+      border-radius: 4px;
+      margin-right: 10px;
+      vertical-align: middle; }
+      nav.header ul li a.dropdown-toggle picture img {
+        border-radius: 4px; }
+    nav.header ul li a.dropdown-toggle span {
+      display: none; }
+      @media (min-width: 768px) {
+        nav.header ul li a.dropdown-toggle span {
+          display: inline-block; } }
+    nav.header ul li .dropdown-menu {
+      left: auto;
+      right: 0;
+      font-size: 12px !important;
+      line-height: 23px !important;
+      font-size: 1.2rem !important;
+      line-height: 2.3rem !important; }
+
+nav.main-nav ul li a[data-toggle="collapse"] {
+  position: relative; }
+
+nav.main-nav ul li a[aria-expanded="false"]::before,
+nav.main-nav ul li a[aria-expanded="true"]::before {
+  position: absolute;
+  font-size: 14px !important;
+  line-height: 23px !important;
+  font-size: 1.4rem !important;
+  line-height: 2.3rem !important;
+  content: '\F105';
+  display: block;
+  right: 15px; }
+
+nav.main-nav ul li a[aria-expanded="true"] {
+  background-color: #319602;
+  color: #fff; }
+  nav.main-nav ul li a[aria-expanded="true"]::before {
+    content: '\F106'; }
+
+nav.main-nav ul li ul.collapse li a,
+nav.main-nav ul li ul.collapsing li a {
+  font-size: 13px !important;
+  line-height: 23px !important;
+  font-size: 1.3rem !important;
+  line-height: 2.3rem !important;
+  background-color: #319602; }
+
+nav.main-nav.active a span {
+  display: none; }
+
+nav.main-nav.active a[aria-expanded="false"]::before,
+nav.main-nav.active a[aria-expanded="true"]::before {
+  top: auto;
+  bottom: 0;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%); }
+
+nav.main-nav.active a[aria-expanded="false"]::before {
+  content: '\F107'; }
 
 body#login {
   background-color: #eee;
@@ -6029,10 +6448,10 @@ body#login {
       body#login .container .row .form-signin form {
         padding: 2.25rem; }
         body#login .container .row .form-signin form h2 {
-          font-size: 30px;
-          line-height: 23px;
-          font-size: 3rem;
-          line-height: 2.3rem;
+          font-size: 30px !important;
+          line-height: 23px !important;
+          font-size: 3rem !important;
+          line-height: 2.3rem !important;
           color: #F1B604;
           margin-top: 3rem; }
         body#login .container .row .form-signin form fieldset {
@@ -6043,10 +6462,10 @@ body#login {
             height: 60px;
             margin-bottom: 2rem; }
             body#login .container .row .form-signin form fieldset .form-group .form-control {
-              font-size: 18px;
-              line-height: 18px;
-              font-size: 1.8rem;
-              line-height: 1.8rem;
+              font-size: 18px !important;
+              line-height: 18px !important;
+              font-size: 1.8rem !important;
+              line-height: 1.8rem !important;
               padding: 27px 18px 9px;
               box-sizing: border-box;
               display: block;
@@ -6061,19 +6480,26 @@ body#login {
                 border-bottom: 1px solid #F1B604;
                 z-index: 11; }
                 body#login .container .row .form-signin form fieldset .form-group .form-control:focus + label {
-                  color: #F1B604;
-                  font-size: 11px;
-                  line-height: 11px;
-                  font-size: 1.1rem;
-                  line-height: 1.1rem;
+                  color: #495057;
+                  font-size: 12px !important;
+                  line-height: 12px !important;
+                  font-size: 1.2rem !important;
+                  line-height: 1.2rem !important;
                   top: 8px; }
+              body#login .container .row .form-signin form fieldset .form-group .form-control.evaluated + label {
+                color: #495057;
+                font-size: 12px !important;
+                line-height: 12px !important;
+                font-size: 1.2rem !important;
+                line-height: 1.2rem !important;
+                top: 8px; }
             body#login .container .row .form-signin form fieldset .form-group label {
               position: absolute;
               display: block;
-              font-size: 18px;
-              line-height: 18px;
-              font-size: 1.8rem;
-              line-height: 1.8rem;
+              font-size: 18px !important;
+              line-height: 18px !important;
+              font-size: 1.8rem !important;
+              line-height: 1.8rem !important;
               color: #adb5bd;
               top: 20px;
               left: 18px;
@@ -6083,16 +6509,17 @@ body#login {
               transition: all .2s ease;
               z-index: 12; }
           body#login .container .row .form-signin form fieldset .btn {
-            font-size: 16px;
-            line-height: 23px;
-            font-size: 1.6rem;
-            line-height: 2.3rem;
+            font-size: 16px !important;
+            line-height: 23px !important;
+            font-size: 1.6rem !important;
+            line-height: 2.3rem !important;
+            color: white;
             padding: 0.75rem 1rem; }
         body#login .container .row .form-signin form a {
-          font-size: 13px;
-          line-height: 23px;
-          font-size: 1.3rem;
-          line-height: 2.3rem;
+          font-size: 13px !important;
+          line-height: 23px !important;
+          font-size: 1.3rem !important;
+          line-height: 2.3rem !important;
           color: #F1B604; }
 
 #brand {
@@ -6101,12 +6528,27 @@ body#login {
     width: 185px;
     height: 125px; }
 
+article {
+  padding: 4rem; }
+  @media (max-width: 575px) {
+    article {
+      padding: 1rem; } }
+  article header {
+    margin-bottom: 2rem; }
+    article header h2 {
+      font-size: 30px !important;
+      line-height: 23px !important;
+      font-size: 3rem !important;
+      line-height: 2.3rem !important; }
+
 /*!
  * Font Awesome Free 5.0.1 by @fontawesome - http://fontawesome.com
  * License - http://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 .fa,
 .fas,
+nav.main-nav ul li a[aria-expanded="false"]::before,
+nav.main-nav ul li a[aria-expanded="true"]::before,
 .far,
 .fal,
 .fab {
@@ -6190,6 +6632,8 @@ body#login {
 
 .fa.fa-pull-left,
 .fas.fa-pull-left,
+nav.main-nav ul li a.fa-pull-left[aria-expanded="false"]::before,
+nav.main-nav ul li a.fa-pull-left[aria-expanded="true"]::before,
 .far.fa-pull-left,
 .fal.fa-pull-left,
 .fab.fa-pull-left {
@@ -6197,6 +6641,8 @@ body#login {
 
 .fa.fa-pull-right,
 .fas.fa-pull-right,
+nav.main-nav ul li a.fa-pull-right[aria-expanded="false"]::before,
+nav.main-nav ul li a.fa-pull-right[aria-expanded="true"]::before,
 .far.fa-pull-right,
 .fal.fa-pull-right,
 .fab.fa-pull-right {
@@ -8655,3 +9101,35 @@ readers do not read off random characters that represent icons */
 .far {
   font-family: 'Font Awesome 5 Free';
   font-weight: 400; }
+
+/*!
+ * Font Awesome Free 5.0.1 by @fontawesome - http://fontawesome.com
+ * License - http://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/fa-solid-900.eot);
+  src: url(../fonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(../fonts/fa-solid-900.woff2) format("woff2"), url(../fonts/fa-solid-900.woff) format("woff"), url(../fonts/fa-solid-900.ttf) format("truetype"), url(../fonts/fa-solid-900.svg#fontawesome) format("svg"); }
+
+.fa,
+.fas,
+nav.main-nav ul li a[aria-expanded="false"]::before,
+nav.main-nav ul li a[aria-expanded="true"]::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900; }
+
+/*!
+ * Font Awesome Free 5.0.1 by @fontawesome - http://fontawesome.com
+ * License - http://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../fonts/fa-brands-400.eot);
+  src: url(../fonts/fa-brands-400.eot?#iefix) format("embedded-opentype"), url(../fonts/fa-brands-400.woff2) format("woff2"), url(../fonts/fa-brands-400.woff) format("woff"), url(../fonts/fa-brands-400.ttf) format("truetype"), url(../fonts/fa-brands-400.svg#fontawesome) format("svg"); }
+
+.fab {
+  font-family: 'Font Awesome 5 Brands'; }

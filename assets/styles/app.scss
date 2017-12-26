@@ -2,14 +2,17 @@
 @import "common/_bootstrap";
 @import "common/_mixins";
 @import "common/_global";
-
 // @import "layouts/_header";
-// @import "layouts/_nav";
+@import "layouts/_nav";
 // @import "layouts/_masshead";
 // @import "layouts/_section";
 // @import "layouts/_page";
 // @import "layouts/_aside";
 // @import "layouts/_footer";
+@import "layouts/_home";
 @import "components/_login";
+@import "components/_article";
 @import "components/font-awesome/fontawesome";
 @import "components/font-awesome/fa-regular";
+@import "components/font-awesome/fa-solid";
+@import "components/font-awesome/fa-brands";

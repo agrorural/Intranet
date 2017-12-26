@@ -27,6 +27,21 @@ $link-color: $primary;
 $link-decoration: none;
 $link-hover-color: lighten($link-color, 5%);
 $link-hover-decoration: none;
-// Fonts
+// Forms
 //
-// Font, line-height, and color for body text, headings, and more.
+// Text Inputs + Textarea
+$input-height: 3rem;
+$input-background: white;
+$input-error-color: $danger;
+$input-success-color: $primary;
+$input-focus-color: $secondary;
+$input-font-size: 1rem;
+$input-margin-bottom: 8px;
+$input-margin: 0 0 $input-margin-bottom 0;
+$input-padding: 0;
+$input-transition: all .3s;
+$label-font-size: .8rem;
+$input-disabled-color: rgba(gray, .42);
+$input-disabled-solid-color: gray;
+$input-disabled-border: 1px dotted $input-disabled-color;
+$input-invalid-border: 1px solid $danger;
