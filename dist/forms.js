@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -16256,7 +16256,9 @@ module.exports = g;
 
 /***/ }),
 /* 6 */,
-/* 7 */
+/* 7 */,
+/* 8 */,
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16267,6 +16269,7 @@ __webpack_require__(2);
 __webpack_require__(3);
 
 $(function () {
+    console.log("ready!");
     $('#txtSearch').focus(function () {
         $('.header').addClass("searching");
         $(this).prev().removeClass("fa-search");

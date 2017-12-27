@@ -40,6 +40,7 @@ nav {
         }
     }
     &.main-nav {
+        position: relative;
         ul {
             li {
                 a[data-toggle="collapse"] {
@@ -53,9 +54,10 @@ nav {
                     content: '\F105';
                     display: block;
                     right: 15px;
+                    line-height: inherit !important;
                 }
                 a[aria-expanded="true"] {
-                    background-color: darken($primary, 3%);
+                    background-color: lighten($primary, 3%);
                     color: $white;
                     &::before {
                         content: '\f106';
@@ -66,7 +68,8 @@ nav {
                     li {
                         a {
                             @include font-size(13);
-                            background-color: darken($primary, 3%);
+                            background-color: lighten($primary, 3%);
+                            padding: 7px 15px !important;
                         }
                     }
                 }
@@ -94,6 +97,26 @@ nav {
                     content: '\f107';
                 }
             }
+        }
+    }
+    .logout-button {
+        @extend .btn;
+        @extend .btn-link;
+        position: absolute;
+        width: 85%;
+        bottom: 15px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        text-align: center;
+        span {
+            display: none;
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+            }
+        }
+        &:hover {
+            background-color: $green;
         }
     }
 }

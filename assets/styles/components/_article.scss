@@ -1,12 +1,8 @@
 article {
-    @include media-breakpoint-down(xs) {
-        padding: 1rem;
-    }
-    padding: 4rem;
     header {
         margin-bottom: 2rem;
         h2 {
-            @include font-size(30);
+            @extend .display-3;
         }
     }
 }

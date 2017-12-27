@@ -393,7 +393,7 @@ h6, .h6 {
   font-weight: 300;
   line-height: 1.2; }
 
-.display-3 {
+.display-3, article header h2 {
   font-size: 4.5rem;
   font-weight: 300;
   line-height: 1.2; }
@@ -1365,15 +1365,18 @@ select.form-control:focus::-ms-value {
   border-width: 1px 0; }
   .form-control-plaintext.form-control-sm, .input-group-sm > .form-control-plaintext.form-control,
   .input-group-sm > .form-control-plaintext.input-group-addon,
-  .input-group-sm > .input-group-btn > .form-control-plaintext.btn, .form-control-plaintext.form-control-lg, .input-group-lg > .form-control-plaintext.form-control,
+  .input-group-sm > .input-group-btn > .form-control-plaintext.btn, nav
+  .input-group-sm > .input-group-btn > .form-control-plaintext.logout-button, .form-control-plaintext.form-control-lg, .input-group-lg > .form-control-plaintext.form-control,
   .input-group-lg > .form-control-plaintext.input-group-addon,
-  .input-group-lg > .input-group-btn > .form-control-plaintext.btn {
+  .input-group-lg > .input-group-btn > .form-control-plaintext.btn, nav
+  .input-group-lg > .input-group-btn > .form-control-plaintext.logout-button {
     padding-right: 0;
     padding-left: 0; }
 
 .form-control-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn {
+.input-group-sm > .input-group-btn > .btn, nav
+.input-group-sm > .input-group-btn > .logout-button {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -1381,12 +1384,14 @@ select.form-control:focus::-ms-value {
 
 select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.form-control:not([size]):not([multiple]),
 .input-group-sm > select.input-group-addon:not([size]):not([multiple]),
-.input-group-sm > .input-group-btn > select.btn:not([size]):not([multiple]) {
+.input-group-sm > .input-group-btn > select.btn:not([size]):not([multiple]), nav
+.input-group-sm > .input-group-btn > select.logout-button:not([size]):not([multiple]) {
   height: calc(1.8125rem + 2px); }
 
 .form-control-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn {
+.input-group-lg > .input-group-btn > .btn, nav
+.input-group-lg > .input-group-btn > .logout-button {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -1394,7 +1399,8 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 
 select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.form-control:not([size]):not([multiple]),
 .input-group-lg > select.input-group-addon:not([size]):not([multiple]),
-.input-group-lg > .input-group-btn > select.btn:not([size]):not([multiple]) {
+.input-group-lg > .input-group-btn > select.btn:not([size]):not([multiple]), nav
+.input-group-lg > .input-group-btn > select.logout-button:not([size]):not([multiple]) {
   height: calc(2.875rem + 2px); }
 
 .form-group {
@@ -1599,7 +1605,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     .form-inline .has-feedback .form-control-feedback {
       top: 0; } }
 
-.btn {
+.btn, nav .logout-button {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -1612,18 +1618,20 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
-  .btn:focus, .btn:hover {
+  .btn:focus, nav .logout-button:focus, .btn:hover, nav .logout-button:hover {
     text-decoration: none; }
-  .btn:focus, .btn.focus {
+  .btn:focus, nav .logout-button:focus, .btn.focus, nav .focus.logout-button {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(54, 165, 2, 0.25); }
-  .btn.disabled, .btn:disabled {
+  .btn.disabled, nav .disabled.logout-button, .btn:disabled, nav .logout-button:disabled {
     opacity: .65; }
-  .btn:not([disabled]):not(.disabled):active, .btn:not([disabled]):not(.disabled).active {
+  .btn:not([disabled]):not(.disabled):active, nav .logout-button:not([disabled]):not(.disabled):active, .btn:not([disabled]):not(.disabled).active, nav .logout-button:not([disabled]):not(.disabled).active {
     background-image: none; }
 
-a.btn.disabled,
-fieldset[disabled] a.btn {
+a.btn.disabled, nav a.disabled.logout-button,
+fieldset[disabled] a.btn,
+fieldset[disabled] nav a.logout-button, nav
+fieldset[disabled] a.logout-button {
   pointer-events: none; }
 
 .btn-primary {
@@ -1954,28 +1962,28 @@ fieldset[disabled] a.btn {
     border-color: #343a40;
     box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5); }
 
-.btn-link {
+.btn-link, nav .logout-button {
   font-weight: 400;
   color: #36A502;
   background-color: transparent; }
-  .btn-link:hover {
+  .btn-link:hover, nav .logout-button:hover {
     color: #3ebe02;
     text-decoration: none;
     background-color: transparent;
     border-color: transparent; }
-  .btn-link:focus, .btn-link.focus {
+  .btn-link:focus, nav .logout-button:focus, .btn-link.focus, nav .focus.logout-button {
     border-color: transparent;
     box-shadow: none; }
-  .btn-link:disabled, .btn-link.disabled {
+  .btn-link:disabled, nav .logout-button:disabled, .btn-link.disabled, nav .disabled.logout-button {
     color: #868e96; }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, nav .btn-group-lg > .logout-button {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, nav .btn-group-sm > .logout-button {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -2118,25 +2126,44 @@ tbody.collapse.show {
   position: relative;
   display: inline-flex;
   vertical-align: middle; }
-  .btn-group > .btn,
-  .btn-group-vertical > .btn {
+  .btn-group > .btn, nav .btn-group > .logout-button,
+  .btn-group-vertical > .btn, nav
+  .btn-group-vertical > .logout-button {
     position: relative;
     flex: 0 1 auto; }
-    .btn-group > .btn:hover,
-    .btn-group-vertical > .btn:hover {
+    .btn-group > .btn:hover, nav .btn-group > .logout-button:hover,
+    .btn-group-vertical > .btn:hover, nav
+    .btn-group-vertical > .logout-button:hover {
       z-index: 2; }
-    .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
-    .btn-group-vertical > .btn:focus,
-    .btn-group-vertical > .btn:active,
-    .btn-group-vertical > .btn.active {
+    .btn-group > .btn:focus, nav .btn-group > .logout-button:focus, .btn-group > .btn:active, nav .btn-group > .logout-button:active, .btn-group > .btn.active, nav .btn-group > .active.logout-button,
+    .btn-group-vertical > .btn:focus, nav
+    .btn-group-vertical > .logout-button:focus,
+    .btn-group-vertical > .btn:active, nav
+    .btn-group-vertical > .logout-button:active,
+    .btn-group-vertical > .btn.active, nav
+    .btn-group-vertical > .active.logout-button {
       z-index: 2; }
-  .btn-group .btn + .btn,
+  .btn-group .btn + .btn, .btn-group nav .logout-button + .btn, nav .btn-group .logout-button + .btn, .btn-group nav .btn + .logout-button, nav .btn-group .btn + .logout-button, .btn-group nav .logout-button + .logout-button, nav .btn-group .logout-button + .logout-button,
   .btn-group .btn + .btn-group,
+  .btn-group nav .logout-button + .btn-group, nav
+  .btn-group .logout-button + .btn-group,
   .btn-group .btn-group + .btn,
+  .btn-group nav .btn-group + .logout-button, nav
+  .btn-group .btn-group + .logout-button,
   .btn-group .btn-group + .btn-group,
   .btn-group-vertical .btn + .btn,
+  .btn-group-vertical nav .logout-button + .btn, nav
+  .btn-group-vertical .logout-button + .btn,
+  .btn-group-vertical nav .btn + .logout-button, nav
+  .btn-group-vertical .btn + .logout-button,
+  .btn-group-vertical nav .logout-button + .logout-button, nav
+  .btn-group-vertical .logout-button + .logout-button,
   .btn-group-vertical .btn + .btn-group,
+  .btn-group-vertical nav .logout-button + .btn-group, nav
+  .btn-group-vertical .logout-button + .btn-group,
   .btn-group-vertical .btn-group + .btn,
+  .btn-group-vertical nav .btn-group + .logout-button, nav
+  .btn-group-vertical .btn-group + .logout-button,
   .btn-group-vertical .btn-group + .btn-group {
     margin-left: -1px; }
 
@@ -2147,16 +2174,16 @@ tbody.collapse.show {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), nav .btn-group > .logout-button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, nav .btn-group > .logout-button:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), nav .btn-group > .logout-button:first-child:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), nav .btn-group > .logout-button:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -2164,29 +2191,29 @@ tbody.collapse.show {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, nav .btn-group > .btn-group:not(:first-child):not(:last-child) > .logout-button {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, nav .btn-group > .btn-group:first-child:not(:last-child) > .logout-button:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, nav .btn-group > .btn-group:last-child:not(:first-child) > .logout-button:first-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn + .dropdown-toggle-split {
+.btn + .dropdown-toggle-split, nav .logout-button + .dropdown-toggle-split {
   padding-right: 0.5625rem;
   padding-left: 0.5625rem; }
-  .btn + .dropdown-toggle-split::after {
+  .btn + .dropdown-toggle-split::after, nav .logout-button + .dropdown-toggle-split::after {
     margin-left: 0; }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, nav .btn-group-sm > .logout-button + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, nav .btn-group-lg > .logout-button + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
 
@@ -2194,37 +2221,42 @@ tbody.collapse.show {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  .btn-group-vertical .btn,
+  .btn-group-vertical .btn, .btn-group-vertical nav .logout-button, nav .btn-group-vertical .logout-button,
   .btn-group-vertical .btn-group {
     width: 100%; }
-  .btn-group-vertical > .btn + .btn,
-  .btn-group-vertical > .btn + .btn-group,
-  .btn-group-vertical > .btn-group + .btn,
+  .btn-group-vertical > .btn + .btn, nav .btn-group-vertical > .logout-button + .btn, nav .btn-group-vertical > .btn + .logout-button, nav .btn-group-vertical > .logout-button + .logout-button,
+  .btn-group-vertical > .btn + .btn-group, nav
+  .btn-group-vertical > .logout-button + .btn-group,
+  .btn-group-vertical > .btn-group + .btn, nav
+  .btn-group-vertical > .btn-group + .logout-button,
   .btn-group-vertical > .btn-group + .btn-group {
     margin-top: -1px;
     margin-left: 0; }
-  .btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  .btn-group-vertical > .btn:not(:first-child):not(:last-child), nav .btn-group-vertical > .logout-button:not(:first-child):not(:last-child) {
     border-radius: 0; }
-  .btn-group-vertical > .btn:first-child:not(:last-child) {
+  .btn-group-vertical > .btn:first-child:not(:last-child), nav .btn-group-vertical > .logout-button:first-child:not(:last-child) {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
-  .btn-group-vertical > .btn:last-child:not(:first-child) {
+  .btn-group-vertical > .btn:last-child:not(:first-child), nav .btn-group-vertical > .logout-button:last-child:not(:first-child) {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
-  .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+  .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, nav .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .logout-button {
     border-radius: 0; }
-  .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+  .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, nav .btn-group-vertical > .btn-group:first-child:not(:last-child) > .logout-button:last-child,
   .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
-  .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, nav .btn-group-vertical > .btn-group:last-child:not(:first-child) > .logout-button:first-child {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
-[data-toggle="buttons"] > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+[data-toggle="buttons"] > .btn input[type="radio"], nav [data-toggle="buttons"] > .logout-button input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"], nav
+[data-toggle="buttons"] > .logout-button input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"], nav
+[data-toggle="buttons"] > .btn-group > .logout-button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"], nav
+[data-toggle="buttons"] > .btn-group > .logout-button input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none; }
@@ -2270,13 +2302,15 @@ tbody.collapse.show {
   border-radius: 0.25rem; }
   .input-group-addon.form-control-sm,
   .input-group-sm > .input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon.btn {
+  .input-group-sm > .input-group-btn > .input-group-addon.btn, nav
+  .input-group-sm > .input-group-btn > .input-group-addon.logout-button {
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
     border-radius: 0.2rem; }
   .input-group-addon.form-control-lg,
   .input-group-lg > .input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon.btn {
+  .input-group-lg > .input-group-btn > .input-group-addon.btn, nav
+  .input-group-lg > .input-group-btn > .input-group-addon.logout-button {
     padding: 0.5rem 1rem;
     font-size: 1.25rem;
     border-radius: 0.3rem; }
@@ -2286,11 +2320,15 @@ tbody.collapse.show {
 
 .input-group .form-control:not(:last-child),
 .input-group-addon:not(:last-child),
-.input-group-btn:not(:last-child) > .btn,
-.input-group-btn:not(:last-child) > .btn-group > .btn,
+.input-group-btn:not(:last-child) > .btn, nav
+.input-group-btn:not(:last-child) > .logout-button,
+.input-group-btn:not(:last-child) > .btn-group > .btn, nav
+.input-group-btn:not(:last-child) > .btn-group > .logout-button,
 .input-group-btn:not(:last-child) > .dropdown-toggle,
-.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
+.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle), nav
+.input-group-btn:not(:first-child) > .logout-button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn, nav
+.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .logout-button {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
@@ -2299,11 +2337,15 @@ tbody.collapse.show {
 
 .input-group .form-control:not(:first-child),
 .input-group-addon:not(:first-child),
-.input-group-btn:not(:first-child) > .btn,
-.input-group-btn:not(:first-child) > .btn-group > .btn,
+.input-group-btn:not(:first-child) > .btn, nav
+.input-group-btn:not(:first-child) > .logout-button,
+.input-group-btn:not(:first-child) > .btn-group > .btn, nav
+.input-group-btn:not(:first-child) > .btn-group > .logout-button,
 .input-group-btn:not(:first-child) > .dropdown-toggle,
-.input-group-btn:not(:last-child) > .btn:not(:first-child),
-.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
+.input-group-btn:not(:last-child) > .btn:not(:first-child), nav
+.input-group-btn:not(:last-child) > .logout-button:not(:first-child),
+.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn, nav
+.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .logout-button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2315,25 +2357,25 @@ tbody.collapse.show {
   align-items: stretch;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn {
+  .input-group-btn > .btn, nav .input-group-btn > .logout-button {
     position: relative; }
-    .input-group-btn > .btn + .btn {
+    .input-group-btn > .btn + .btn, nav .input-group-btn > .logout-button + .btn, nav .input-group-btn > .btn + .logout-button, nav .input-group-btn > .logout-button + .logout-button {
       margin-left: -1px; }
-    .input-group-btn > .btn:focus, .input-group-btn > .btn:active, .input-group-btn > .btn:hover {
+    .input-group-btn > .btn:focus, nav .input-group-btn > .logout-button:focus, .input-group-btn > .btn:active, nav .input-group-btn > .logout-button:active, .input-group-btn > .btn:hover, nav .input-group-btn > .logout-button:hover {
       z-index: 3; }
-  .input-group-btn:first-child > .btn + .btn {
+  .input-group-btn:first-child > .btn + .btn, nav .input-group-btn:first-child > .logout-button + .btn, nav .input-group-btn:first-child > .btn + .logout-button, nav .input-group-btn:first-child > .logout-button + .logout-button {
     margin-left: 0; }
-  .input-group-btn:not(:last-child) > .btn,
+  .input-group-btn:not(:last-child) > .btn, nav .input-group-btn:not(:last-child) > .logout-button,
   .input-group-btn:not(:last-child) > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:not(:first-child) > .btn,
+  .input-group-btn:not(:first-child) > .btn, nav .input-group-btn:not(:first-child) > .logout-button,
   .input-group-btn:not(:first-child) > .btn-group {
     z-index: 2;
     margin-left: 0; }
-    .input-group-btn:not(:first-child) > .btn:first-child,
+    .input-group-btn:not(:first-child) > .btn:first-child, nav .input-group-btn:not(:first-child) > .logout-button:first-child,
     .input-group-btn:not(:first-child) > .btn-group:first-child {
       margin-left: -1px; }
-    .input-group-btn:not(:first-child) > .btn:focus, .input-group-btn:not(:first-child) > .btn:active, .input-group-btn:not(:first-child) > .btn:hover,
+    .input-group-btn:not(:first-child) > .btn:focus, nav .input-group-btn:not(:first-child) > .logout-button:focus, .input-group-btn:not(:first-child) > .btn:active, nav .input-group-btn:not(:first-child) > .logout-button:active, .input-group-btn:not(:first-child) > .btn:hover, nav .input-group-btn:not(:first-child) > .logout-button:hover,
     .input-group-btn:not(:first-child) > .btn-group:focus,
     .input-group-btn:not(:first-child) > .btn-group:active,
     .input-group-btn:not(:first-child) > .btn-group:hover {
@@ -3101,7 +3143,7 @@ tbody.collapse.show {
   .badge:empty {
     display: none; }
 
-.btn .badge {
+.btn .badge, nav .logout-button .badge {
   position: relative;
   top: -1px; }
 
@@ -4119,10 +4161,10 @@ a.bg-dark:focus, a.bg-dark:hover {
   border-top-left-radius: 0.25rem !important;
   border-bottom-left-radius: 0.25rem !important; }
 
-.rounded-circle {
+.rounded-circle, #wrapper nav#sidebar .media img {
   border-radius: 50% !important; }
 
-.rounded-0 {
+.rounded-0, .breadcrumb, .btn, nav .logout-button {
   border-radius: 0 !important; }
 
 .clearfix::after {
@@ -5876,6 +5918,12 @@ a.text-dark:focus, a.text-dark:hover {
   font-style: normal; }
 
 @font-face {
+  font-family: 'ubuntulight';
+  src: url(../fonts/Ubuntu-Light.woff2) format("woff2"), url(../fonts/Ubuntu-Light.woff) format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
   font-family: 'ubunturegular';
   src: url(../fonts/Ubuntu-Regular.woff2) format("woff2"), url(../fonts/Ubuntu-Regular.woff) format("woff");
   font-weight: normal;
@@ -5921,10 +5969,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
-  font-size: 16px !important;
-  line-height: 23px !important;
-  font-size: 1.6rem !important;
-  line-height: 2.3rem !important; }
+  font-size: 16px;
+  line-height: 23px;
+  font-size: 1.6rem;
+  line-height: 2.3rem; }
 
 h1,
 h2,
@@ -5935,7 +5983,8 @@ h6 {
   font-family: "ubunturegular", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased; }
+  font-smoothing: antialiased;
+  font-size: 100%; }
 
 a {
   color: #36A502;
@@ -5944,6 +5993,11 @@ a {
     color: #3ebe02;
     text-decoration: none;
     transition: all 0.1s; }
+
+.breadcrumb {
+  padding: 0;
+  background-color: transparent;
+  font-size: 75%; }
 
 input:not([type]):disabled, input:not([type])[readonly="readonly"],
 input[type=text]:not(.browser-default):disabled,
@@ -6035,22 +6089,22 @@ textarea:focus:not([readonly]) + label {
 form .form-group {
   position: relative;
   margin-bottom: 2rem;
-  font-size: 13px !important;
-  line-height: 23px !important;
-  font-size: 1.3rem !important;
-  line-height: 2.3rem !important; }
+  font-size: 13px;
+  line-height: 23px;
+  font-size: 1.3rem;
+  line-height: 2.3rem; }
   form .form-group label {
     z-index: 12;
     color: #495057;
-    font-size: 11px !important;
-    line-height: 16px !important;
-    font-size: 1.1rem !important;
-    line-height: 1.6rem !important; }
+    font-size: 11px;
+    line-height: 16px;
+    font-size: 1.1rem;
+    line-height: 1.6rem; }
   form .form-group .form-control {
-    font-size: 13px !important;
-    line-height: 13px !important;
-    font-size: 1.3rem !important;
-    line-height: 1.3rem !important; }
+    font-size: 13px;
+    line-height: 13px;
+    font-size: 1.3rem;
+    line-height: 1.3rem; }
   form .form-group.form-check label {
     padding-left: 1.5rem; }
     form .form-group.form-check label input {
@@ -6059,10 +6113,10 @@ form .form-group {
     height: 46px; }
     form .form-group.input-field input,
     form .form-group.input-field textarea {
-      font-size: 14px !important;
-      line-height: 14px !important;
-      font-size: 1.4rem !important;
-      line-height: 1.4rem !important;
+      font-size: 14px;
+      line-height: 14px;
+      font-size: 1.4rem;
+      line-height: 1.4rem;
       color: #495057;
       background-color: transparent;
       border: none;
@@ -6082,38 +6136,60 @@ form .form-group {
         form .form-group.input-field input:focus ~ label,
         form .form-group.input-field textarea:focus ~ label {
           color: #36A502;
-          font-size: 11px !important;
-          line-height: 11px !important;
-          font-size: 1.1rem !important;
-          line-height: 1.1rem !important;
+          font-size: 11px;
+          line-height: 11px;
+          font-size: 1.1rem;
+          line-height: 1.1rem;
           top: 3px; }
     form .form-group.input-field textarea {
       background-color: transparent; }
     form .form-group.input-field label {
       position: absolute;
-      font-size: 14px !important;
-      line-height: 14px !important;
-      font-size: 1.4rem !important;
-      line-height: 1.4rem !important;
+      font-size: 14px;
+      line-height: 14px;
+      font-size: 1.4rem;
+      line-height: 1.4rem;
       top: 20px; }
     form .form-group.input-field.not-empty label, form .form-group.input-field.placeholder label {
       top: 3px;
-      font-size: 11px !important;
-      line-height: 11px !important;
-      font-size: 1.1rem !important;
-      line-height: 1.1rem !important; }
+      font-size: 11px;
+      line-height: 11px;
+      font-size: 1.1rem;
+      line-height: 1.1rem; }
+    form .form-group.input-field input.is-valid ~ label,
+    form .form-group.input-field input.is-invalid ~ label {
+      font-size: 11px;
+      line-height: 11px;
+      font-size: 1.1rem;
+      line-height: 1.1rem;
+      top: 3px; }
+    form .form-group.input-field input.is-valid {
+      border-bottom: 1px solid #36A502; }
+      form .form-group.input-field input.is-valid ~ label {
+        color: #36A502; }
+    form .form-group.input-field input.is-invalid {
+      border-bottom: 1px solid #CC0500; }
+      form .form-group.input-field input.is-invalid ~ label {
+        color: #CC0500; }
 
-.btn,
+.custom-file {
+  font-size: 100% !important; }
+
+.btn, nav .logout-button,
 .popover,
 .popover-header,
 .tooltip {
   font-size: 100%; }
 
-.btn {
-  font-family: "ubuntumedium", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
+.custom-select {
+  background: none;
+  background-size: 0%; }
+
+.btn, nav .logout-button {
+  font-size: 13px;
+  line-height: 23px;
+  font-size: 1.3rem;
+  line-height: 2.3rem;
   text-transform: uppercase; }
 
 #brand {
@@ -6138,19 +6214,19 @@ form .form-group {
     height: 125px; }
 
 .popover .popover-header {
-  font-size: 16px !important;
-  line-height: 16px !important;
-  font-size: 1.6rem !important;
-  line-height: 1.6rem !important;
+  font-size: 16px;
+  line-height: 16px;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
   color: #36A502;
   background-color: transparent;
   border-bottom: 1px solid transparent; }
 
 .popover .popover-body {
-  font-size: 13px !important;
-  line-height: 18px !important;
-  font-size: 1.3rem !important;
-  line-height: 1.8rem !important;
+  font-size: 13px;
+  line-height: 18px;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
   color: #868e96; }
 
 #wrapper {
@@ -6170,8 +6246,13 @@ form .form-group {
         max-width: 80px;
         text-align: center;
         margin-left: -80px !important; } }
-    #wrapper nav#sidebar .sidebar-header {
+    #wrapper nav#sidebar .media {
       background-color: #39af02;
+      padding: 15px; }
+      #wrapper nav#sidebar .media img {
+        margin-right: 1rem; }
+    #wrapper nav#sidebar .sidebar-header {
+      background-color: #fff;
       max-height: 70px;
       padding: 15px; }
       #wrapper nav#sidebar .sidebar-header h1#brand {
@@ -6179,7 +6260,7 @@ form .form-group {
         width: 135px;
         height: 40px;
         background-repeat: no-repeat;
-        background-image: url(../images/agronet__logo--white--sm--horizontal.png);
+        background-image: url(../images/agronet__logo--color--sm--horizontal.png);
         margin: 0;
         width: 135px;
         height: 40px; }
@@ -6221,14 +6302,14 @@ form .form-group {
         #wrapper nav#sidebar a span {
           display: none; } }
     #wrapper nav#sidebar ul li a {
-      padding: 10px;
+      padding: 10px 15px;
       display: block; }
       #wrapper nav#sidebar ul li a i {
         margin-right: 5px;
-        font-size: 16px !important;
-        line-height: 23px !important;
-        font-size: 1.6rem !important;
-        line-height: 2.3rem !important; }
+        font-size: 16px;
+        line-height: 23px;
+        font-size: 1.6rem;
+        line-height: 2.3rem; }
       #wrapper nav#sidebar ul li a:hover {
         background-color: #fff;
         color: #36A502; }
@@ -6245,7 +6326,7 @@ form .form-group {
         width: 50px;
         height: 50px;
         background-repeat: no-repeat;
-        background-image: url(../images/agronet__logo--white--xs.png);
+        background-image: url(../images/agronet__logo--color--xs.png);
         margin: 0;
         width: 50px;
         height: 50px; }
@@ -6260,20 +6341,23 @@ form .form-group {
         #wrapper nav#sidebar.active .sidebar-header h1#brand a {
           width: 50px;
           height: 50px; }
+      #wrapper nav#sidebar.active .media .media-body {
+        display: none; }
       #wrapper nav#sidebar.active ul li a i {
         margin-right: 0;
         display: block;
         margin-bottom: 5px; }
       #wrapper nav#sidebar.active ul li a span {
-        font-size: 13px !important;
-        line-height: 13px !important;
-        font-size: 1.3rem !important;
-        line-height: 1.3rem !important; }
+        font-size: 13px;
+        line-height: 13px;
+        font-size: 1.3rem;
+        line-height: 1.3rem; }
   #wrapper #content {
     flex: 1 1 100%; }
     #wrapper #content nav.header {
       height: 70px;
-      background-color: #dee2e6; }
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #e9ecef; }
       #wrapper #content nav.header .navbar-header {
         height: 70px; }
       #wrapper #content nav.header form {
@@ -6293,10 +6377,10 @@ form .form-group {
           #wrapper #content nav.header form fieldset.fieldset-light {
             background-color: rgba(255, 255, 255, 0.75); }
             #wrapper #content nav.header form fieldset.fieldset-light i {
-              font-size: 16px !important;
-              line-height: 23px !important;
-              font-size: 1.6rem !important;
-              line-height: 2.3rem !important;
+              font-size: 16px;
+              line-height: 23px;
+              font-size: 1.6rem;
+              line-height: 2.3rem;
               line-height: 32px;
               text-align: center;
               width: 48px; }
@@ -6304,7 +6388,7 @@ form .form-group {
               #wrapper #content nav.header form fieldset.fieldset-light input {
                 width: 75px; } }
       #wrapper #content nav.header.searching {
-        background-color: #ced4da; }
+        background-color: #e9ecef; }
         #wrapper #content nav.header.searching form {
           padding-left: 0;
           padding-right: 0;
@@ -6321,8 +6405,11 @@ form .form-group {
                   width: 300px; } }
     #wrapper #content main {
       flex: 1;
-      background-color: #fff;
-      padding: 0; }
+      background-color: #f8f9fa;
+      padding: 4rem; }
+      @media (max-width: 575px) {
+        #wrapper #content main {
+          padding: 1rem; } }
   #wrapper footer {
     height: 70px;
     background-color: #868e96;
@@ -6354,53 +6441,67 @@ nav.header {
     nav.header ul li .dropdown-menu {
       left: auto;
       right: 0;
-      font-size: 12px !important;
-      line-height: 23px !important;
-      font-size: 1.2rem !important;
-      line-height: 2.3rem !important; }
+      font-size: 12px;
+      line-height: 23px;
+      font-size: 1.2rem;
+      line-height: 2.3rem; }
 
-nav.main-nav ul li a[data-toggle="collapse"] {
+nav.main-nav {
   position: relative; }
-
-nav.main-nav ul li a[aria-expanded="false"]::before,
-nav.main-nav ul li a[aria-expanded="true"]::before {
-  position: absolute;
-  font-size: 14px !important;
-  line-height: 23px !important;
-  font-size: 1.4rem !important;
-  line-height: 2.3rem !important;
-  content: '\F105';
-  display: block;
-  right: 15px; }
-
-nav.main-nav ul li a[aria-expanded="true"] {
-  background-color: #319602;
-  color: #fff; }
+  nav.main-nav ul li a[data-toggle="collapse"] {
+    position: relative; }
+  nav.main-nav ul li a[aria-expanded="false"]::before,
   nav.main-nav ul li a[aria-expanded="true"]::before {
-    content: '\F106'; }
+    position: absolute;
+    font-size: 14px;
+    line-height: 23px;
+    font-size: 1.4rem;
+    line-height: 2.3rem;
+    content: '\F105';
+    display: block;
+    right: 15px;
+    line-height: inherit !important; }
+  nav.main-nav ul li a[aria-expanded="true"] {
+    background-color: #3bb402;
+    color: #fff; }
+    nav.main-nav ul li a[aria-expanded="true"]::before {
+      content: '\F106'; }
+  nav.main-nav ul li ul.collapse li a,
+  nav.main-nav ul li ul.collapsing li a {
+    font-size: 13px;
+    line-height: 23px;
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+    background-color: #3bb402;
+    padding: 7px 15px !important; }
+  nav.main-nav.active a span {
+    display: none; }
+  nav.main-nav.active a[aria-expanded="false"]::before,
+  nav.main-nav.active a[aria-expanded="true"]::before {
+    top: auto;
+    bottom: 0;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%); }
+  nav.main-nav.active a[aria-expanded="false"]::before {
+    content: '\F107'; }
 
-nav.main-nav ul li ul.collapse li a,
-nav.main-nav ul li ul.collapsing li a {
-  font-size: 13px !important;
-  line-height: 23px !important;
-  font-size: 1.3rem !important;
-  line-height: 2.3rem !important;
-  background-color: #319602; }
-
-nav.main-nav.active a span {
-  display: none; }
-
-nav.main-nav.active a[aria-expanded="false"]::before,
-nav.main-nav.active a[aria-expanded="true"]::before {
-  top: auto;
-  bottom: 0;
-  right: 50%;
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%); }
-
-nav.main-nav.active a[aria-expanded="false"]::before {
-  content: '\F107'; }
+nav .logout-button {
+  position: absolute;
+  width: 85%;
+  bottom: 15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center; }
+  nav .logout-button span {
+    display: none; }
+    @media (min-width: 768px) {
+      nav .logout-button span {
+        display: inline-block; } }
+  nav .logout-button:hover {
+    background-color: #36A502; }
 
 body#login {
   background-color: #eee;
@@ -6448,10 +6549,10 @@ body#login {
       body#login .container .row .form-signin form {
         padding: 2.25rem; }
         body#login .container .row .form-signin form h2 {
-          font-size: 30px !important;
-          line-height: 23px !important;
-          font-size: 3rem !important;
-          line-height: 2.3rem !important;
+          font-size: 30px;
+          line-height: 23px;
+          font-size: 3rem;
+          line-height: 2.3rem;
           color: #F1B604;
           margin-top: 3rem; }
         body#login .container .row .form-signin form fieldset {
@@ -6462,10 +6563,10 @@ body#login {
             height: 60px;
             margin-bottom: 2rem; }
             body#login .container .row .form-signin form fieldset .form-group .form-control {
-              font-size: 18px !important;
-              line-height: 18px !important;
-              font-size: 1.8rem !important;
-              line-height: 1.8rem !important;
+              font-size: 18px;
+              line-height: 18px;
+              font-size: 1.8rem;
+              line-height: 1.8rem;
               padding: 27px 18px 9px;
               box-sizing: border-box;
               display: block;
@@ -6481,25 +6582,25 @@ body#login {
                 z-index: 11; }
                 body#login .container .row .form-signin form fieldset .form-group .form-control:focus + label {
                   color: #495057;
-                  font-size: 12px !important;
-                  line-height: 12px !important;
-                  font-size: 1.2rem !important;
-                  line-height: 1.2rem !important;
+                  font-size: 12px;
+                  line-height: 12px;
+                  font-size: 1.2rem;
+                  line-height: 1.2rem;
                   top: 8px; }
               body#login .container .row .form-signin form fieldset .form-group .form-control.evaluated + label {
                 color: #495057;
-                font-size: 12px !important;
-                line-height: 12px !important;
-                font-size: 1.2rem !important;
-                line-height: 1.2rem !important;
+                font-size: 12px;
+                line-height: 12px;
+                font-size: 1.2rem;
+                line-height: 1.2rem;
                 top: 8px; }
             body#login .container .row .form-signin form fieldset .form-group label {
               position: absolute;
               display: block;
-              font-size: 18px !important;
-              line-height: 18px !important;
-              font-size: 1.8rem !important;
-              line-height: 1.8rem !important;
+              font-size: 18px;
+              line-height: 18px;
+              font-size: 1.8rem;
+              line-height: 1.8rem;
               color: #adb5bd;
               top: 20px;
               left: 18px;
@@ -6508,18 +6609,18 @@ body#login {
               pointer-events: none;
               transition: all .2s ease;
               z-index: 12; }
-          body#login .container .row .form-signin form fieldset .btn {
-            font-size: 16px !important;
-            line-height: 23px !important;
-            font-size: 1.6rem !important;
-            line-height: 2.3rem !important;
+          body#login .container .row .form-signin form fieldset .btn, body#login .container .row .form-signin form fieldset nav .logout-button, nav body#login .container .row .form-signin form fieldset .logout-button {
+            font-size: 16px;
+            line-height: 23px;
+            font-size: 1.6rem;
+            line-height: 2.3rem;
             color: white;
             padding: 0.75rem 1rem; }
         body#login .container .row .form-signin form a {
-          font-size: 13px !important;
-          line-height: 23px !important;
-          font-size: 1.3rem !important;
-          line-height: 2.3rem !important;
+          font-size: 13px;
+          line-height: 23px;
+          font-size: 1.3rem;
+          line-height: 2.3rem;
           color: #F1B604; }
 
 #brand {
@@ -6528,18 +6629,8 @@ body#login {
     width: 185px;
     height: 125px; }
 
-article {
-  padding: 4rem; }
-  @media (max-width: 575px) {
-    article {
-      padding: 1rem; } }
-  article header {
-    margin-bottom: 2rem; }
-    article header h2 {
-      font-size: 30px !important;
-      line-height: 23px !important;
-      font-size: 3rem !important;
-      line-height: 2.3rem !important; }
+article header {
+  margin-bottom: 2rem; }
 
 /*!
  * Font Awesome Free 5.0.1 by @fontawesome - http://fontawesome.com

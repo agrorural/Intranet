@@ -3,6 +3,7 @@ import '../styles/app.scss';
 import 'bootstrap';
 
 $(function() {
+    console.log("ready!");
     $('#txtSearch').focus(function() {
         $('.header').addClass("searching");
         $(this).prev().removeClass("fa-search");

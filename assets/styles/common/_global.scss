@@ -9,6 +9,13 @@
     }
     
     @font-face {
+        font-family: 'ubuntulight';
+        src: url('../fonts/Ubuntu-Light.woff2') format('woff2'), url('../fonts/Ubuntu-Light.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
         font-family: 'ubunturegular';
         src: url('../fonts/Ubuntu-Regular.woff2') format('woff2'), url('../fonts/Ubuntu-Regular.woff') format('woff');
         font-weight: normal;
@@ -71,6 +78,7 @@
     h6 {
         @include font-family('ubuntu',
         'regular');
+        font-size: 100%;
     }
     
     a {
@@ -82,6 +90,16 @@
             text-decoration: $link-hover-decoration;
             transition: all 0.1s;
         }
+    }
+    
+    //
+    // Breadcrumb
+    //
+    .breadcrumb {
+        padding: 0;
+        background-color: transparent;
+        @extend .rounded-0;
+        font-size: 75%;
     }
     
     //
@@ -191,8 +209,32 @@
                         11);
                     }
                 }
+                input.is-valid,
+                input.is-invalid {
+                    ~label {
+                        @include font-size(11,
+                        11);
+                        top: 3px;
+                    }
+                }
+                input.is-valid {
+                    border-bottom: 1px solid $primary;
+                    ~label {
+                        color: $primary;
+                    }
+                }
+                input.is-invalid {
+                    border-bottom: 1px solid $danger;
+                    ~label {
+                        color: $danger;
+                    }
+                }
             }
         }
+    }
+    
+    .custom-file {
+        font-size: 100% !important;
     }
     
     .btn,
@@ -202,9 +244,14 @@
         font-size: 100%;
     }
     
+    .custom-select {
+        background: none;
+        background-size: 0%;
+    }
+    
     .btn {
-        @include font-family('ubuntu',
-        'medium');
+        @include font-size(13);
+        @extend .rounded-0;
         text-transform: uppercase;
     }
     
@@ -265,14 +312,22 @@
             background-color: lighten($primary,
             5%);
             transition: all 0.3s;
-            .sidebar-header {
+            .media {
                 background-color: lighten($primary, 2%);
+                padding: 15px;
+                img {
+                    @extend .rounded-circle;
+                    margin-right: 1rem;
+                }
+            }
+            .sidebar-header {
+                background-color: $white;
                 max-height: 70px;
                 padding: 15px;
                 h1#brand {
                     @include img-replace(135,
                     40);
-                    background-image: url(../images/agronet__logo--white--sm--horizontal.png);
+                    background-image: url(../images/agronet__logo--color--sm--horizontal.png);
                     margin: 0;
                     width: 135px;
                     height: 40px;
@@ -305,7 +360,7 @@
             ul {
                 li {
                     a {
-                        padding: 10px;
+                        padding: 10px 15px;
                         display: block;
                         i {
                             margin-right: 5px;
@@ -331,7 +386,7 @@
                     h1#brand {
                         @include img-replace(50,
                         50);
-                        background-image: url(../images/agronet__logo--white--xs.png);
+                        background-image: url(../images/agronet__logo--color--xs.png);
                         margin: 0;
                         width: 50px;
                         height: 50px;
@@ -339,6 +394,11 @@
                             width: 50px;
                             height: 50px;
                         }
+                    }
+                }
+                .media {
+                    .media-body {
+                        display: none;
                     }
                 }
                 ul {
@@ -369,7 +429,8 @@
                 @extend .flex-wrap;
                 height: 70px;
                 @extend .align-items-center;
-                background-color: $gray-300;
+                background-color: $gray-100;
+                border-bottom: 1px solid $gray-200;
                 .navbar-header {
                     @extend .d-flex;
                     @extend .flex-row;
@@ -410,7 +471,7 @@
                     }
                 }
                 &.searching {
-                    background-color: $gray-400;
+                    background-color: $gray-200;
                     form {
                         padding-left: 0;
                         padding-right: 0;
@@ -434,8 +495,11 @@
             }
             main {
                 flex: 1;
-                background-color: $white;
-                padding: 0;
+                background-color: $gray-100;
+                @include media-breakpoint-down(xs) {
+                    padding: 1rem;
+                }
+                padding: 4rem;
             }
         }
         footer {

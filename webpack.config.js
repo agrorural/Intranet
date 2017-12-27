@@ -15,7 +15,8 @@ module.exports = {
     entry: {
         vendors: path.join(libPath, 'vendors.js'),
         index: path.join(libPath, 'index', 'index.js'),
-        login: path.join(libPath, 'login', 'index.js')
+        login: path.join(libPath, 'login', 'index.js'),
+        forms: path.join(libPath, 'forms', 'index.js')
     },
     output: {
         path: path.join(distPath),
@@ -84,7 +85,7 @@ module.exports = {
         extractPlugin,
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            chunks: ['vendors', 'index'],
+            chunks: ['index'],
             inject: 'body',
             hash: false,
             pkg: pkg,
@@ -93,11 +94,20 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'login/index.html',
             title: pkg.title,
-            chunks: ['vendors', 'login'],
+            chunks: ['login'],
             inject: 'body',
             hash: false,
             pkg: pkg,
             template: path.join(libPath, 'login', 'index.html')
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'forms/index.html',
+            title: pkg.title,
+            chunks: ['forms'],
+            inject: 'body',
+            hash: false,
+            pkg: pkg,
+            template: path.join(libPath, 'forms', 'index.html')
         }),
         new CleanWebpackPlugin(['dist'])
     ]
