@@ -6238,7 +6238,7 @@ form .form-group {
     min-width: 250px;
     max-width: 250px;
     color: #fff;
-    background-color: #3ebe02;
+    background-color: #36A502;
     transition: all 0.3s; }
     @media (max-width: 767px) {
       #wrapper nav#sidebar {
@@ -6251,6 +6251,11 @@ form .form-group {
       padding: 15px; }
       #wrapper nav#sidebar .media img {
         margin-right: 1rem; }
+      #wrapper nav#sidebar .media .media-body {
+        display: block; }
+        @media (max-width: 767px) {
+          #wrapper nav#sidebar .media .media-body {
+            display: none; } }
     #wrapper nav#sidebar .sidebar-header {
       background-color: #fff;
       max-height: 70px;

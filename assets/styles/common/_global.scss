@@ -309,8 +309,7 @@
             min-width: 250px;
             max-width: 250px;
             color: #fff;
-            background-color: lighten($primary,
-            5%);
+            background-color: $primary;
             transition: all 0.3s;
             .media {
                 background-color: lighten($primary, 2%);
@@ -318,6 +317,12 @@
                 img {
                     @extend .rounded-circle;
                     margin-right: 1rem;
+                }
+                .media-body {
+                    @media (max-width: 767px) {
+                        display: none;
+                    }
+                    display: block;
                 }
             }
             .sidebar-header {
