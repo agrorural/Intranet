@@ -2,21 +2,6 @@ import '../styles/app.scss';
 
 import 'bootstrap';
 
-const Chartkick = require('chartkick');
-
-//COMMMONJS
-//require("datatables.net")();
-//require("datatables.net-bs4")();
-//require("datatables.net-responsive")();
-//require("datatables.net-responsive-bs4")();
-
-//AMD
-//import 'datatables.net';
-//import 'datatables.net-bs4';
-//import 'datatables.net-responsive';
-import 'datatables.net-responsive-bs4';
-
-
 $(function() {
     $('#txtSearch').focus(function() {
         $('.header').addClass("searching");
@@ -44,10 +29,4 @@ $(function() {
         $('nav#sidebar').toggleClass('active');
     });
 
-    $('#example').DataTable({
-        responsive: true
-    });
-
 });
-
-new Chartkick.LineChart("chart-1", { "2013-02-10 00:00:00 -0800": 11, "2013-02-11 00:00:00 -0800": 6 });

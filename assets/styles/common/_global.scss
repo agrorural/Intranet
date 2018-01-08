@@ -37,6 +37,13 @@
     }
     
     @font-face {
+        font-family: 'ubuntumono';
+        src: url('../fonts/Ubuntu-Mono.woff2') format('woff2'), url('../fonts/Ubuntu-Mono.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
         font-family: 'libre_franklinlight';
         src: url('../fonts/Libre_Franklin-Light.woff2') format('woff2'), url('../fonts/Libre_Franklin-Light.woff') format('woff');
         font-weight: normal;
@@ -47,11 +54,6 @@
      ::-moz-selection {
         background-color: $lime-light;
         color: $gray-800;
-    }
-    
-    * {
-        -webkit-transition: all .3s ease;
-        transition: all .3s ease;
     }
     /* Works in Safari */
     
@@ -67,7 +69,7 @@
     body {
         @include font-family('libre_franklin',
         'light');
-        @include font-size();
+        @include font-size(14);
     }
     
     h1,
@@ -77,8 +79,31 @@
     h5,
     h6 {
         @include font-family('ubuntu',
-        'regular');
-        font-size: 100%;
+        'light');
+    }
+    
+    h1 {
+        @include font-size(40);
+    }
+    
+    h2 {
+        @include font-size(32);
+    }
+    
+    h3 {
+        @include font-size(28);
+    }
+    
+    h4 {
+        @include font-size(24);
+    }
+    
+    h5 {
+        @include font-size(20);
+    }
+    
+    h6 {
+        @include font-size(16);
     }
     
     a {
@@ -118,17 +143,17 @@
     input[type=number]:not(.browser-default),
     input[type=search]:not(.browser-default),
     textarea {
-        // Disabled input style
-        &:disabled,
-        &[readonly="readonly"] {
-            color: $input-disabled-color;
-            border-bottom: $input-disabled-border;
-        }
-        // Disabled label style
-        &:disabled+label,
-        &[readonly="readonly"]+label {
-            color: $input-disabled-color;
-        }
+        @include font-size(14,
+        14);
+        color: $gray-700;
+        background-color: transparent;
+        border: none;
+        border-bottom: $input-btn-border-width solid $input-border-color;
+        border-radius: 0;
+        outline: none;
+        box-shadow: none;
+        padding: 20px 0 10px;
+        height: 46px;
         // Focused input style
         &:focus:not([readonly]) {
             border-bottom: 1px solid $primary;
@@ -167,20 +192,6 @@
                 height: 46px;
                 input,
                 textarea {
-                    @include font-size(14,
-                    14);
-                    color: $gray-700;
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: $input-btn-border-width solid $input-border-color;
-                    border-radius: 0;
-                    outline: none;
-                    height: $input-height;
-                    margin: $input-margin;
-                    padding: $input-padding;
-                    box-shadow: none;
-                    padding: 20px 0 10px;
-                    height: 46px;
                     &:focus {
                         border-bottom: 1px solid $primary;
                         z-index: 11;
@@ -250,9 +261,47 @@
     }
     
     .btn {
+        @include font-family('ubuntu',
+        'medium');
         @include font-size(13);
-        @extend .rounded-0;
         text-transform: uppercase;
+        letter-spacing: .1rem;
+        cursor: pointer;
+    }
+    
+    .btn-sm {
+        @include font-size(11);
+    }
+    
+    .btn-lg {
+        @include font-size(16);
+    }
+    
+    //
+    // Tipografia
+    //    
+    .lead {
+        @include font-size(20);
+    }
+    
+    //
+    // Code
+    //
+    pre {
+        @include font-family('ubuntu',
+        'mono');
+        @include font-size(12);
+        line-height: inherit;
+        background-color: $gray-100;
+        border: 1px solid $gray-300;
+        padding: 2rem;
+        color: $gray-700;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        &:hover {
+            background-color: $white;
+            color: $gray-900;
+        }
     }
     
     //
@@ -299,7 +348,10 @@
         max-width: 100%;
         margin: auto;
         background-color: $gray-100;
-        nav#sidebar {
+        nav.main-nav {
+            position: fixed;
+            top: 0;
+            bottom: 0;
             @include media-breakpoint-down(sm) {
                 min-width: 80px;
                 max-width: 80px;
@@ -308,23 +360,9 @@
             }
             min-width: 250px;
             max-width: 250px;
-            color: #fff;
+            color: $white;
             background-color: $primary;
             transition: all 0.3s;
-            .media {
-                background-color: lighten($primary, 2%);
-                padding: 15px;
-                img {
-                    @extend .rounded-circle;
-                    margin-right: 1rem;
-                }
-                .media-body {
-                    @media (max-width: 767px) {
-                        display: none;
-                    }
-                    display: block;
-                }
-            }
             .sidebar-header {
                 background-color: $white;
                 max-height: 70px;
@@ -352,6 +390,20 @@
                             height: 50px;
                         }
                     }
+                }
+            }
+            .media {
+                background-color: lighten($primary, 2%);
+                padding: 15px;
+                img {
+                    @extend .rounded-circle;
+                    margin-right: 1rem;
+                }
+                .media-body {
+                    @media (max-width: 767px) {
+                        display: none;
+                    }
+                    display: block;
                 }
             }
             a {
@@ -412,13 +464,18 @@
                             i {
                                 margin-right: 0;
                                 display: block;
-                                margin-bottom: 5px;
                             }
                             span {
                                 @include font-size(13,
                                 13);
                             }
                         }
+                    }
+                }
+                ~#content {
+                    margin-left: 80px;
+                    nav.header {
+                        left: 80px;
                     }
                 }
             }
@@ -428,6 +485,12 @@
             @extend .flex-column;
             @extend .flex-wrap;
             flex: 1 1 100%;
+            @include media-breakpoint-up(sm) {
+                margin-left: 250px;
+            }
+            @include media-breakpoint-down(sm) {
+                margin-left: 0;
+            }
             nav.header {
                 @extend .d-flex;
                 @extend .flex-row;
@@ -452,12 +515,11 @@
                         float: left;
                         background-color: rgba($white, .25);
                         input {
-                            background: transparent;
-                            border: 0;
-                            outline: none;
                             width: auto;
                             border-bottom: 0px solid transparent;
                             box-shadow: none;
+                            padding: initial;
+                            height: initial;
                         }
                         &.fieldset-light {
                             background-color: rgba($white, .75);
@@ -501,9 +563,10 @@
             main {
                 flex: 1;
                 background-color: $gray-100;
-                @include media-breakpoint-down(xs) {
-                    padding: 1rem;
+                @include media-breakpoint-down(sm) {
+                    padding: 2rem;
                 }
+                margin-top: 70px;
                 padding: 4rem;
             }
         }

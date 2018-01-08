@@ -16,14 +16,22 @@ module.exports = {
         vendors: path.join(libPath, 'vendors.js'),
         index: path.join(libPath, 'index', 'index.js'),
         login: path.join(libPath, 'login', 'index.js'),
+        typo: path.join(libPath, 'typo', 'index.js'),
+        modal: path.join(libPath, 'modal', 'index.js'),
+        buttons: path.join(libPath, 'buttons', 'index.js'),
         forms: path.join(libPath, 'forms', 'index.js')
     },
     output: {
         path: path.join(distPath),
-        filename: '[name].js'
+        filename: 'scripts/[name].js'
     },
     module: {
-        rules: [{
+        rules: [
+            // {
+            //     test: /datatables\.net.*/,
+            //     loader: 'imports-loader?define=>false'
+            // },
+            {
                 test: /\.js$/,
                 use: [{
                     loader: 'babel-loader',
@@ -80,12 +88,13 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
+            'window.$': 'jquery',
             Popper: ['popper.js', 'default']
         }),
         extractPlugin,
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            chunks: ['index'],
+            chunks: ['vendors', 'index'],
             inject: 'body',
             hash: false,
             pkg: pkg,
@@ -94,7 +103,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'login/index.html',
             title: pkg.title,
-            chunks: ['login'],
+            chunks: ['vendors', 'login'],
             inject: 'body',
             hash: false,
             pkg: pkg,
@@ -103,11 +112,38 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'forms/index.html',
             title: pkg.title,
-            chunks: ['forms'],
+            chunks: ['vendors', 'forms'],
             inject: 'body',
             hash: false,
             pkg: pkg,
             template: path.join(libPath, 'forms', 'index.html')
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'typo/index.html',
+            title: pkg.title,
+            chunks: ['vendors', 'typo'],
+            inject: 'body',
+            hash: false,
+            pkg: pkg,
+            template: path.join(libPath, 'typo', 'index.html')
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'buttons/index.html',
+            title: pkg.title,
+            chunks: ['vendors', 'buttons'],
+            inject: 'body',
+            hash: false,
+            pkg: pkg,
+            template: path.join(libPath, 'buttons', 'index.html')
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'modal/index.html',
+            title: pkg.title,
+            chunks: ['vendors', 'modal'],
+            inject: 'body',
+            hash: false,
+            pkg: pkg,
+            template: path.join(libPath, 'modal', 'index.html')
         }),
         new CleanWebpackPlugin(['dist'])
     ]

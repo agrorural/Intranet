@@ -10,7 +10,7 @@
     @include text-render();
 }
 
-@mixin font-size($sizeValue: 16, $line-height: 23) {
+@mixin font-size($sizeValue: 16, $line-height: ($sizeValue * 1.618)) {
     font-size: ($sizeValue) + px;
     line-height: ($line-height) + px;
     font-size: ($sizeValue * 0.1) + rem;

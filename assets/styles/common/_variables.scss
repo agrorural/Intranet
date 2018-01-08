@@ -15,8 +15,8 @@ $cyan: #17a2b8;
 $colors: ();
 $colors: map-merge(( "red": $red, "orange": $orange, "yellow": $yellow, "green-dark": $green-dark, "green": $green, "green-light": $green-light, "lime": $lime, "lime-light": $lime-light, "teal": $teal, "cyan": $cyan), $colors);
 $primary: $green;
-$secondary: $yellow;
-$success: $green-light;
+$secondary: #EBEBEB;
+$success: $lime;
 $info: $teal;
 $warning: $orange;
 $danger: $red;
@@ -29,22 +29,23 @@ $link-hover-color: lighten($link-color, 5%);
 $link-hover-decoration: none;
 // Forms
 //
-// Text Inputs + Textarea
-$input-height: 3rem;
-$input-background: white;
-$input-error-color: $danger;
-$input-success-color: $primary;
-$input-focus-color: $secondary;
-$input-font-size: 1rem;
-$input-margin-bottom: 8px;
-$input-margin: 0 0 $input-margin-bottom 0;
-$input-padding: 0;
-$input-transition: all .3s;
-$label-font-size: .8rem;
-$input-disabled-color: rgba(gray, .42);
-$input-disabled-solid-color: gray;
-$input-disabled-border: 1px dotted $input-disabled-color;
-$input-invalid-border: 1px solid $danger;
+// 
 // Buttons
 //
 // For each of Bootstrap's buttons, define text, background and border color.
+$input-btn-padding-y-sm: .5rem;
+$input-btn-padding-x-sm: 1.25rem;
+$input-btn-padding-y: .75rem;
+$input-btn-padding-x: 1.75rem;
+$input-btn-padding-y-lg: 1rem;
+$input-btn-padding-x-lg: 2.25rem;
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius: 499rem;
+$btn-border-radius-lg: 499rem;
+$btn-border-radius-sm: 499rem;
+// Dropdowns
+//
+// Dropdown menu container and contents.
+$dropdown-padding-y: .75rem;
+$dropdown-item-padding-y: .75rem;
+$dropdown-item-padding-x: 1.75rem;
