@@ -1,1 +1,35 @@
 @import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+.dataTables_wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    >.row {
+        @extend .no-gutters;
+        margin-bottom: 1.25rem;
+    }
+    .dataTables_length {
+        padding-top: 14px;
+        select {
+            height: calc(3rem + 2px) !important;
+        }
+    }
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_paginate {
+        color: $gray-700;
+        @include font-size(12);
+    }
+}
+
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+    bottom: 0.5rem;
+}

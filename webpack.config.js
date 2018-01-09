@@ -19,6 +19,7 @@ module.exports = {
         typo: path.join(libPath, 'typo', 'index.js'),
         modal: path.join(libPath, 'modal', 'index.js'),
         buttons: path.join(libPath, 'buttons', 'index.js'),
+        tables: path.join(libPath, 'tables', 'index.js'),
         forms: path.join(libPath, 'forms', 'index.js')
     },
     output: {
@@ -144,6 +145,15 @@ module.exports = {
             hash: false,
             pkg: pkg,
             template: path.join(libPath, 'modal', 'index.html')
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'tables/index.html',
+            title: pkg.title,
+            chunks: ['vendors', 'tables'],
+            inject: 'body',
+            hash: false,
+            pkg: pkg,
+            template: path.join(libPath, 'tables', 'index.html')
         }),
         new CleanWebpackPlugin(['dist'])
     ]

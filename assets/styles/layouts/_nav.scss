@@ -32,7 +32,6 @@ nav {
                     background-color: lighten($primary, 3%);
                     color: $white;
                     &::before {
-                        //content: '\f106';
                         transform: rotate(180deg);
                     }
                 }
@@ -42,6 +41,11 @@ nav {
                         a {
                             @include font-size(13);
                             background-color: lighten($primary, 3%);
+                            &.active {
+                                background-color: $gray-100 !important;
+                                color: $primary !important;
+                                //text-decoration: underline;
+                            }
                         }
                     }
                 }
@@ -64,7 +68,6 @@ nav {
             }
             a[aria-expanded="true"] {
                 &::before {
-                    //content: '\f107';
                     transform: rotate(180deg);
                 }
             }
@@ -75,12 +78,10 @@ nav {
         left: 250px;
         right: 0;
         @include media-breakpoint-down(sm) {
-            padding-left: 2rem;
-            padding-right: 2rem;
             left: 0;
         }
-        padding-left: 4rem;
-        padding-right: 4rem;
+        padding-left: 30px;
+        padding-right: 30px;
         ul {
             li {
                 position: relative;
@@ -114,6 +115,10 @@ nav {
             }
         }
         form {
+            @include media-breakpoint-down(xs) {
+                width: calc(100% - 100px);
+            }
+            width: calc(100% - 175px);
             fieldset {
                 #sidebarCollapse {
                     padding: 0;
