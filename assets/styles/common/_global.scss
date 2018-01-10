@@ -127,6 +127,38 @@
     }
     
     //
+    // Cards
+    //
+    .card {
+        .card-body {
+            padding: 2rem;
+        }
+        .card-config {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            list-style: none;
+        }
+        .card-title {
+            @include font-size(30,
+            30);
+        }
+        .card-subtitle {
+            @extend .mb-2;
+            @extend .text-muted;
+            margin-top: -.75rem;
+            padding-bottom: .5rem;
+        }
+    }
+    
+    //
+    // Charts
+    //
+    .chart {
+        min-height: 175px;
+    }
+    
+    //
     // Breadcrumb
     //
     .breadcrumb {
@@ -327,7 +359,7 @@
     table {
         @extend .table;
         @extend .table-striped;
-        @extend .table-bordered;
+        //@extend .table-bordered;
         @extend .table-hover;
         thead {
             tr {
@@ -639,7 +671,7 @@
                 padding-right: 0;
                 width: calc(100% - 60px);
                 flex: 1;
-                margin-top: 120px;
+                margin-top: 100px;
             }
         }
     }
@@ -668,7 +700,7 @@
     .btn-secondary,
     .btn-secondary:hover,
     .btn-outline-secondary:hover {
-        color: $brown-300;
+        color: $brown-300 !important;
     }
     
     .btn-light {
