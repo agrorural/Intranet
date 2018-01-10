@@ -4,16 +4,10 @@ import 'bootstrap';
 
 const Chartkick = require('chartkick');
 
-//COMMMONJS
-//require("datatables.net")();
-//require("datatables.net-bs4")();
-//require("datatables.net-responsive")();
-//require("datatables.net-responsive-bs4")();
-
 //AMD
-//import 'datatables.net';
-//import 'datatables.net-bs4';
-//import 'datatables.net-responsive';
+import 'datatables.net';
+import 'datatables.net-bs4';
+import 'datatables.net-responsive';
 import 'datatables.net-responsive-bs4';
 
 

@@ -666,6 +666,7 @@
     }
     
     .btn-secondary,
+    .btn-secondary:hover,
     .btn-outline-secondary:hover {
         color: $brown-300;
     }
@@ -685,10 +686,11 @@
     }
     
     .btn-outline-light {
-        color: $gray-200;
-        border-color: $gray-200;
+        color: $gray-300;
+        border-color: $gray-300;
         &:hover {
-            color: $gray-300;
+            color: $gray-700;
             border-color: $gray-300;
+            background-color: $gray-300;
         }
     }

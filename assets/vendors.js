@@ -1,1 +1,3 @@
-import 'chartkick/chartkick.js';
+$(function() {
+    console.log('Jquery ready');
+});

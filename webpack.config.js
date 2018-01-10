@@ -1,4 +1,4 @@
-var path = require('path'),
+let path = require('path'),
     libPath = path.join(__dirname, 'assets'),
     distPath = path.join(__dirname, 'dist'),
     pkg = require('./package.json'),
@@ -7,7 +7,7 @@ var path = require('path'),
     etp = require('extract-text-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var extractPlugin = new etp({
+let extractPlugin = new etp({
     filename: 'styles/main.css'
 });
 
@@ -20,7 +20,8 @@ module.exports = {
         modal: path.join(libPath, 'modal', 'index.js'),
         buttons: path.join(libPath, 'buttons', 'index.js'),
         tables: path.join(libPath, 'tables', 'index.js'),
-        forms: path.join(libPath, 'forms', 'index.js')
+        forms: path.join(libPath, 'forms', 'index.js'),
+        charts: path.join(libPath, 'charts', 'index.js')
     },
     output: {
         path: path.join(distPath),
@@ -94,8 +95,8 @@ module.exports = {
         }),
         extractPlugin,
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            chunks: ['vendors', 'index'],
+            filename: 'index/index.html',
+            chunks: ['index'],
             inject: 'body',
             hash: false,
             pkg: pkg,
@@ -104,7 +105,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'login/index.html',
             title: pkg.title,
-            chunks: ['vendors', 'login'],
+            chunks: ['login'],
             inject: 'body',
             hash: false,
             pkg: pkg,
@@ -113,7 +114,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'forms/index.html',
             title: pkg.title,
-            chunks: ['vendors', 'forms'],
+            chunks: ['forms'],
             inject: 'body',
             hash: false,
             pkg: pkg,
@@ -122,7 +123,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'typo/index.html',
             title: pkg.title,
-            chunks: ['vendors', 'typo'],
+            chunks: ['typo'],
             inject: 'body',
             hash: false,
             pkg: pkg,
@@ -131,7 +132,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'buttons/index.html',
             title: pkg.title,
-            chunks: ['vendors', 'buttons'],
+            chunks: ['buttons'],
             inject: 'body',
             hash: false,
             pkg: pkg,
@@ -140,7 +141,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'modal/index.html',
             title: pkg.title,
-            chunks: ['vendors', 'modal'],
+            chunks: ['modal'],
             inject: 'body',
             hash: false,
             pkg: pkg,
@@ -149,11 +150,21 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'tables/index.html',
             title: pkg.title,
-            chunks: ['vendors', 'tables'],
+            chunks: ['tables'],
             inject: 'body',
             hash: false,
             pkg: pkg,
             template: path.join(libPath, 'tables', 'index.html')
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'charts/index.html',
+            title: pkg.title,
+            chunks: ['vendors', 'charts'],
+            chunksSortMode: 'manual',
+            inject: 'body',
+            hash: false,
+            pkg: pkg,
+            template: path.join(libPath, 'charts', 'index.html')
         }),
         new CleanWebpackPlugin(['dist'])
     ]
